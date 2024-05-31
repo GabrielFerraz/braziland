@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     public float speed;
+    private Rigidbody2D rb;
+    bool facingright=false;
 
    public Animator animator;
 
@@ -20,6 +23,16 @@ public class Movement : MonoBehaviour
         AnimateMovement(direction);
 
         transform.position += direction * speed * Time.deltaTime;
+
+        if (direction.x == 1 && !facingright) Flip();
+        else if (direction.x == -1 && facingright) Flip();
+
+    }
+
+    private void Flip()
+    {
+        facingright = !facingright;
+        transform.Rotate(0,180,0);
     }
 
     private void AnimateMovement(Vector3 direction)
