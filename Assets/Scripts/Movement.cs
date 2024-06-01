@@ -10,9 +10,11 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     bool facingright=false;
 
-   public Animator animator;
+    public Animator animator;
 
-    private void Update()
+    private Vector3 direction;
+
+    void Update()
     {
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -22,13 +24,16 @@ public class Movement : MonoBehaviour
 
         AnimateMovement(direction);
 
-        transform.position += direction * speed * Time.deltaTime;
 
         if (direction.x == 1 && !facingright) Flip();
         else if (direction.x == -1 && facingright) Flip();
 
     }
+    private void FixedUpdate()
+    {
+        this.transform.position += direction.normalized * speed * Time.deltaTime;
 
+    }
     private void Flip()
     {
         facingright = !facingright;
