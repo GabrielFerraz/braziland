@@ -6,4 +6,9 @@ public class Player : MonoBehaviour
 {
     public int numTomato = 0;
 
+    void Update()
+    {
+        
+    }
+
 }
