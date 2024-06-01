@@ -6,27 +6,24 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
-    public string itemName;
-    public int count;
-    public int maxAllowed;
-
-    public Sprite icon;
+   
 
     [System.Serializable]
     public class Slot
     {
+        public string itemName;
+
         public int count;
         public int maxAllowed;
 
         public Sprite icon;
 
-        public string itemName;
 
         public Slot()
         {
-            this.count = 0;
-            this.maxAllowed = 99;
-            this.icon = null;
+            itemName = "";
+            count = 0;
+            maxAllowed = 99;
         }
 
         public bool CanAddItem()

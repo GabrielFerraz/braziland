@@ -7,7 +7,7 @@ public class ItemManager : MonoBehaviour
 {
     public Item[] items;
 
-    private Dictionary<string, Item> NameToItemDict =
+    private Dictionary<string, Item> nameToItemDict =
     new Dictionary<string, Item>();
 
     private void Awake()
@@ -21,16 +21,16 @@ public class ItemManager : MonoBehaviour
     private void AddItem(Item item)
     {
 
-        if (!NameToItemDict.ContainsKey(item.data.itemName))
-            NameToItemDict.Add(item.data.itemName, item);
+        if (!nameToItemDict.ContainsKey(item.data.itemName))
+            nameToItemDict.Add(item.data.itemName, item);
 
     }
 
     public Item GetItemByName(string key)
     { 
 
-            if (NameToItemDict.ContainsKey(key))
-                return NameToItemDict[key];
+            if (nameToItemDict.ContainsKey(key))
+                return nameToItemDict[key];
             return null;
     }
 

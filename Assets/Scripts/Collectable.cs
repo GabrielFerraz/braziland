@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Item))]
 public class Collectable : MonoBehaviour
 {
-    public Sprite icon;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
