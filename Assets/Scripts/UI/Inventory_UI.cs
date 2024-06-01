@@ -12,7 +12,11 @@ public class Inventory_UI : MonoBehaviour
 
     public ItemManager itemManager;
 
-  
+
+    public void Awake()
+    {
+        itemManager = GetComponent<ItemManager>();
+    }
 
     void Update()
     {
@@ -52,8 +56,9 @@ public class Inventory_UI : MonoBehaviour
     }
     public void Remove(int slotID)
     {
+        Debug.Log("Remove button clicked");
         Item itemToDrop = itemManager.GetItemByName(
-player.inventory.slots[slotID].itemName);
+        player.inventory.slots[slotID].itemName);
 
         if (itemToDrop != null)
         {
