@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
             if ( tileManager != null &&  tileManager.IsInteractable(position))
             {
+                Debug.Log("Tile manager not null");
                  tileManager.SetInteracted(position);
             }
         }

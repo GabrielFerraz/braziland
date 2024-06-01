@@ -18,8 +18,9 @@ public class TileManager : MonoBehaviour
         {
             TileBase tile = interactableMap.GetTile(position);
 
-            if (tile != null && tile.name == "interactable" ) 
+            if (tile != null && tile.name == "interactable") 
             {
+                Debug.Log("so tile name is interactable interesting");
             interactableMap.SetTile(position, hiddenInteractableTile);
             }
 
