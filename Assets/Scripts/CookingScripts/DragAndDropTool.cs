@@ -12,10 +12,12 @@ public class DragAndDropTool : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     private RectTransform rect;
     private bool hoveringPlace = false;
     private Vector2 startPosition;
+    private ToolPosition triggeredPosition;
     
     public Image img;
-    public ToolPosition placingPosition;
-    
+    // public ToolPosition placingPosition;
+    public List<ToolPosition> positions;
+
     // Start is called before the first frame update
     void Start() {
         rect = GetComponent<RectTransform>();
@@ -28,35 +30,47 @@ public class DragAndDropTool : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
-        placingPosition.SetDraggedTool(this);
+        foreach (var position in positions) {
+            position.SetDraggedTool(this);
+        }
         img.color = new Color(255, 255, 255, 100);
         rect.localScale = new Vector3(1, 1, 1);
     }
 
     public void OnEndDrag(PointerEventData eventData) {
         img.color = new Color(255, 255, 255, 255);
-        if (hoveringPlace && placingPosition.CanPlace(gameObject.name)) {
-            rect.transform.position = placingPosition.transform.position;
+        if (hoveringPlace && triggeredPosition.CanPlace(gameObject.name)) {
+            rect.transform.position = triggeredPosition.transform.position;
             rect.localScale = new Vector3(3, 3, 3);
-            placingPosition.SetActiveTool(gameObject.name);
+            foreach (var position in positions) {
+                string activeName = triggeredPosition.gameObject.name == position.name ? gameObject.name : "";
+                position.SetActiveTool(activeName);
+            }
+            
             // gameObject.SetActive(false);
         } else {
             rect.transform.position = startPosition;
             rect.localScale = new Vector3(1, 1, 1);
-            placingPosition.gameObject.SetActive(false); 
+            triggeredPosition.gameObject.SetActive(false);
+            triggeredPosition = null;
+            foreach (var position in positions) {
+                position.SetActiveTool("");
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("trigger");
-        if (other.gameObject == placingPosition.gameObject) {
-            hoveringPlace = true;
+        foreach (var position in positions) {
+            if (other.gameObject == position.gameObject) {
+                hoveringPlace = true;
+                triggeredPosition = position;
+            }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject == placingPosition.gameObject) {
-            hoveringPlace = false;
-        }
+        hoveringPlace = false;
     }
 }

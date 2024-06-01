@@ -31,9 +31,13 @@ namespace CookingScripts {
     }
 
     public void SetActiveTool(string toolName) {
-      if (activeTool != "") return;
-      activeTool = toolName;
-      img.color = new Color(255, 255, 255, 255);
+      if (toolName != "") {
+        if (activeTool != "") return;
+        activeTool = toolName;
+        img.color = new Color(255, 255, 255, 1f);
+      } else {
+        gameObject.SetActive(false);
+      }
     }
 
     public bool CanPlace(string toolName) {
