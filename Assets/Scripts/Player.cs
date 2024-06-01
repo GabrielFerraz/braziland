@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 
     public Inventory inventory;
 
+    public TileManager tileManager;
+
     private void Awake()
     {
         inventory = new Inventory(21);
@@ -18,11 +20,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Vector3Int position = new Vector3Int((int)transform.position.x,
-                (int)transform.position.y, (int)(transform.position.z+1));
+                (int)transform.position.y, 0);
 
-            if (GameManager.instance.tileManager != null && GameManager.instance.tileManager.IsInteractable(position))
+            if ( tileManager != null &&  tileManager.IsInteractable(position))
             {
-                GameManager.instance.tileManager.SetInteracted(position);
+                 tileManager.SetInteracted(position);
             }
         }
     }
