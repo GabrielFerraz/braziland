@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 
 public class ClosePanel : MonoBehaviour, IPointerClickHandler {
+  
   public ToolPanel parent;
 
   public void Start() {
