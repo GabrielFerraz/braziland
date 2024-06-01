@@ -23,17 +23,14 @@ public class Movement : MonoBehaviour
         Vector3 direction = new Vector3(horizontal, vertical);
 
         AnimateMovement(direction);
+        transform.position += direction.normalized * speed * Time.deltaTime;
 
 
         if (direction.x == 1 && !facingright) Flip();
         else if (direction.x == -1 && facingright) Flip();
 
     }
-    private void FixedUpdate()
-    {
-        this.transform.position += direction.normalized * speed * Time.deltaTime;
-
-    }
+    
     private void Flip()
     {
         facingright = !facingright;
