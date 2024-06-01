@@ -18,20 +18,26 @@ namespace CookingScripts {
     } 
 
     public void SetDraggedTool(DragAndDropTool dragged) {
-      gameObject.SetActive(true);
-      activeToolObj = dragged;
-      img.sprite = dragged.GetComponent<Image>().sprite;
-      img.color = new Color(255, 255, 255, 0.5f);
+      if (activeTool == "" || activeTool == dragged.gameObject.name) {
+        gameObject.SetActive(true);
+        activeToolObj = dragged;
+        img.sprite = dragged.GetComponent<Image>().sprite;
+        img.color = new Color(255, 255, 255, 0.5f);
+        if (activeTool == dragged.gameObject.name) {
+          activeTool = "";
+          activeToolObj = null;
+        }
+      }
     }
 
     public void SetActiveTool(string toolName) {
-      
+      if (activeTool != "") return;
       activeTool = toolName;
       img.color = new Color(255, 255, 255, 255);
     }
 
     public bool CanPlace(string toolName) {
-      return allowedTools.Contains(toolName);
+      return activeTool == "" && allowedTools.Contains(toolName);
     }
   }
 }
