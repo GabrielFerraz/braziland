@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public int numTomato = 0;
 
-    public TileManager tileManager; // Reference to the TileManager (assigned in the Inspector)
 
     public Inventory inventory;
 
@@ -21,9 +20,9 @@ public class Player : MonoBehaviour
             Vector3Int position = new Vector3Int((int)transform.position.x,
                 (int)transform.position.y, (int)(transform.position.z+1));
 
-            if (tileManager != null && tileManager.IsInteractable(position))
+            if (GameManager.instance.tileManager != null && GameManager.instance.tileManager.IsInteractable(position))
             {
-                tileManager.SetInteracted(position);
+                GameManager.instance.tileManager.SetInteracted(position);
             }
         }
     }
