@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 512ChamomileTea
   m_EditorClassIdentifier: 
   number: 512
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 54a5095d19fe2aa4fa30c93d46d086fc, type: 3}

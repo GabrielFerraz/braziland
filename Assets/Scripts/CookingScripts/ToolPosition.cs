@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace CookingScripts {
-  public class ToolPosition : MonoBehaviour {
+  public class ToolPosition : MonoBehaviour, IPointerClickHandler {
 
     private DragAndDropTool activeToolObj;
     
@@ -14,6 +14,9 @@ namespace CookingScripts {
     public List<string> allowedTools;
     public CookingController cookingCtrl;
     public RectTransform meterBar;
+    public CookingInventory inventory;
+    public Sprite rewardImage;
+    
 
     private void Start() {
       img = GetComponent<Image>();
@@ -38,7 +41,7 @@ namespace CookingScripts {
         if (activeTool != "") return;
         activeTool = toolName;
         img.color = new Color(255, 255, 255, 1f);
-        cookingCtrl.AddActiveTool(toolName, gameObject.name, meterBar);
+        cookingCtrl.AddActiveTool(toolName, gameObject.name, meterBar, this);
       } else {
         gameObject.SetActive(false);
         cookingCtrl.RemoveActiveTool(activeTool);
@@ -53,6 +56,18 @@ namespace CookingScripts {
 
     public void AddIngredient(int ingredientNumber) {
       cookingCtrl.AddItem(activeTool, ingredientNumber);
+    }
+
+    public void SetReward(Sprite img) {
+      Debug.Log("SetReward");
+      rewardImage = img;
+    }
+
+    public void OnPointerClick(PointerEventData eventData) {
+      if (rewardImage != null) {
+        inventory.AddItem(rewardImage);
+        rewardImage = null;
+      }
     }
   }
 }

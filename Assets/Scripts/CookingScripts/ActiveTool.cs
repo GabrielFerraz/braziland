@@ -13,16 +13,19 @@ namespace CookingScripts {
     private bool isPreparing = false;
     private RectTransform meterBar;
     private string currentAudio = "start";
+    private ToolPosition tool;
 
     public string toolName = "";
     public AudioSource source;
     
-    public void SetInitial(string tName, string currentPos, RecipeScriptableObj[] recipeList, RectTransform meter) {
+    public void SetInitial(string tName, string currentPos, RecipeScriptableObj[] recipeList, RectTransform meter, ToolPosition t) {
       currentPosition = currentPos;
       recipes = recipeList;
       toolName = tName;
       meterBar = meter;
       source = GetComponent<AudioSource>();
+      tool = t;
+      
     }
 
     private void Update() {
@@ -49,6 +52,7 @@ namespace CookingScripts {
 
       if (recipeDuration <= 0 && isPreparing) {
         isPreparing = false;
+        tool.SetReward(possibleRecipe.result.image);
       }
     }
 

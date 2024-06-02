@@ -8,7 +8,7 @@ namespace CookingScripts {
     public List<ActiveTool> activeTools;
     public RecipeScriptableObj[] recipes;
 
-    public void AddActiveTool(string toolName, string position, RectTransform meterBar) {
+    public void AddActiveTool(string toolName, string position, RectTransform meterBar, ToolPosition t) {
       var index = -1;
       for (int i = 0; i < activeTools.Count; i++) {
         Debug.Log("activeTools[i].toolName: " + activeTools[i].toolName);
@@ -23,7 +23,7 @@ namespace CookingScripts {
         activeTools[index].MovePosition(position);
       } else {
         var component = gameObject.AddComponent<ActiveTool>();
-        component.SetInitial(toolName, position, recipes, meterBar);
+        component.SetInitial(toolName, position, recipes, meterBar, t);
         activeTools.Add(component);
       }
     }
