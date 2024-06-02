@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d37ed9374f49ac4aad33e276bf3f57b, type: 3}
+  m_Name: Samuel_Day1
+  m_EditorClassIdentifier: 
+  author: {fileID: 11400000, guid: 29464ca3f8f483e458a9db11b4f0ddd6, type: 2}
+  letterContent:
+  - "Hey Elle. \n\n\tI am a normal office worker and while going to work I heard
+    about your tea shop, which would seem to be a good fit for my needs. Usually
+    I wouldn\u2019t trust some random tea shop to lift my mood up. At least considering
+    the last time I visited one they brought me a blueberry cheesecake even though
+    i asked for a slice of chicken pie. "
+  - "\tWhat travesty to mix up sweet and salty like that! I do need to confirm though
+    that there isn\u2019t a sun near your shop? Just asking as I hate being basked
+    by It\u2019s light for medical reasons. Hope to see you when you next open!"
+  personalityCues:
+  - Vampire that loves Salty treaats until they contain garlic
+  - Little bit of a pessimist
+  - Most usually tired, because of work anxiety
+  isSpriteContent: 1
+  letterContentSprite:
+  - {fileID: 21300000, guid: 058e1ea6163ecf34bb81f3d00cd71a54, type: 3}
+  isDelivered: 0
+  isRead: 0

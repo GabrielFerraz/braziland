@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81ae81628db33f4e8ada8ba7e2a4b81, type: 3}
+  m_Name: Samuel
+  m_EditorClassIdentifier: 
+  mainProfile: {fileID: 21300000, guid: 2e89f9fca16d56b49bc1b277e2bcf57b, type: 3}
+  characterType: 0
+  characterName: Samuel
+  species: Vampire
+  dialogData:
+  - {fileID: 11400000, guid: 95c2bfe7133670b459a236d56cade7a7, type: 2}
+  - {fileID: 11400000, guid: cd99fc03e623425499895eb575c8e251, type: 2}
+  - {fileID: 11400000, guid: cedca03b87bd2094899c1935940b175a, type: 2}
+  satisfiedAll: 0
+  characterLikes:
+  - likedItem: {fileID: 11400000, guid: 229869ab949c0204ca7a6154200eadac, type: 2}
+    isGiven: 0
+  - likedItem: {fileID: 11400000, guid: ac23a43aaf40d614b91c60dc12911c34, type: 2}
+    isGiven: 0

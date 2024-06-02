@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bc2800ef9734845b0323a6aab28dd3, type: 3}
+  m_Name: Samuel_Day6
+  m_EditorClassIdentifier: 
+  conversationList:
+  - dialogues:
+    - speaker: {fileID: 11400000, guid: ab50d9833f140cb4f8a74a7ee7af0b71, type: 2}
+      line: Man, I can't wait to savor this
+      dialogExpression: 1
+      isVoiceOver: 0
+      voice: {fileID: 0}
+    - speaker: {fileID: 11400000, guid: ab50d9833f140cb4f8a74a7ee7af0b71, type: 2}
+      line: 'Let''s pray, for your sake, you don''t disappoint me! '
+      dialogExpression: 0
+      isVoiceOver: 0
+      voice: {fileID: 0}
+    - speaker: {fileID: 11400000, guid: ab50d9833f140cb4f8a74a7ee7af0b71, type: 2}
+      line: 'I may not thirst for blood, but nothing will stop me from feasting if
+        I get annoyed. '
+      dialogExpression: 3
+      isVoiceOver: 0
+      voice: {fileID: 0}
+    waitForVoice: 0
