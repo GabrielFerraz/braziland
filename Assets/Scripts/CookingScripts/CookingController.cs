@@ -8,22 +8,32 @@ namespace CookingScripts {
     public List<ActiveTool> activeTools;
     public RecipeScriptableObj[] recipes;
 
-    public void AddActiveTool(string toolName, string position) {
-      var index = activeTools.FindIndex(t => t.toolName == toolName);
+    public void AddActiveTool(string toolName, string position, RectTransform meterBar) {
+      var index = -1;
+      for (int i = 0; i < activeTools.Count; i++) {
+        Debug.Log("activeTools[i].toolName: " + activeTools[i].toolName);
+        Debug.Log("toolName: " + toolName);
+        if (activeTools[i].toolName == toolName) {
+          Debug.Log("is same");
+          index = i;
+        }
+      }
       Debug.Log("index: " + index);
       if (index >= 0) {
         activeTools[index].MovePosition(position);
       } else {
         var component = gameObject.AddComponent<ActiveTool>();
-        component.SetInitial(toolName, position, recipes);
+        component.SetInitial(toolName, position, recipes, meterBar);
         activeTools.Add(component);
       }
     }
 
     public void RemoveActiveTool(string toolName) {
-      var tool = activeTools.Find(t => t.toolName == toolName);
-      if (tool) {
-        activeTools.Remove(tool);
+      var toolIndex = activeTools.FindIndex(t => t.toolName == toolName);
+      if (toolIndex >= 0) {
+        var tool = activeTools[toolIndex];
+        activeTools.RemoveAt(toolIndex);
+        Destroy(tool);
       }
     }
 

@@ -7,5 +7,9 @@ namespace CookingScripts {
     public float duration;
     public ItemScriptableObj result;
     public string preparationPosition;
+    public string utensilNeeded;
+    public AudioSource start;
+    public AudioSource loop;
+    public AudioSource ending;
   }
 }

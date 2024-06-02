@@ -13,6 +13,7 @@ namespace CookingScripts {
     public Image img;
     public List<string> allowedTools;
     public CookingController cookingCtrl;
+    public RectTransform meterBar;
 
     private void Start() {
       img = GetComponent<Image>();
@@ -25,6 +26,7 @@ namespace CookingScripts {
         img.sprite = dragged.GetComponent<Image>().sprite;
         img.color = new Color(255, 255, 255, 0.5f);
         if (activeTool == dragged.gameObject.name) {
+          // cookingCtrl.RemoveActiveTool(activeTool);
           activeTool = "";
           activeToolObj = null;
         }
@@ -36,12 +38,14 @@ namespace CookingScripts {
         if (activeTool != "") return;
         activeTool = toolName;
         img.color = new Color(255, 255, 255, 1f);
-        cookingCtrl.AddActiveTool(toolName, gameObject.name);
+        cookingCtrl.AddActiveTool(toolName, gameObject.name, meterBar);
       } else {
         gameObject.SetActive(false);
-        cookingCtrl.RemoveActiveTool(toolName);
+        cookingCtrl.RemoveActiveTool(activeTool);
+        activeTool = "";
       }
     }
+    
 
     public bool CanPlace(string toolName) {
       return activeTool == "" && allowedTools.Contains(toolName);

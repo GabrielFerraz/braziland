@@ -41,16 +41,16 @@ public class DragAndDropTool : MonoBehaviour, IDragHandler, IBeginDragHandler, I
         img.color = new Color(255, 255, 255, 255);
         if (hoveringPlace && triggeredPosition.CanPlace(gameObject.name)) {
             rect.transform.position = triggeredPosition.transform.position;
-            rect.localScale = new Vector3(3, 3, 3);
+            rect.localScale = new Vector3(4, 4, 4);
             foreach (var position in positions) {
-                string activeName = triggeredPosition.gameObject.name == position.name ? gameObject.name : "";
+                string activeName = triggeredPosition.gameObject.name == position.gameObject.name ? gameObject.name : "";
                 position.SetActiveTool(activeName);
             }
             
             // gameObject.SetActive(false);
         } else {
             rect.transform.position = startPosition;
-            rect.localScale = new Vector3(1, 1, 1);
+            rect.localScale = new Vector3(2, 2, 2);
             triggeredPosition.gameObject.SetActive(false);
             triggeredPosition = null;
             foreach (var position in positions) {
@@ -60,7 +60,6 @@ public class DragAndDropTool : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("trigger");
         foreach (var position in positions) {
             if (other.gameObject == position.gameObject) {
                 hoveringPlace = true;
