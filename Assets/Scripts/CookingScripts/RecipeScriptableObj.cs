@@ -8,8 +8,8 @@ namespace CookingScripts {
     public ItemScriptableObj result;
     public string preparationPosition;
     public string utensilNeeded;
-    public AudioSource start;
-    public AudioSource loop;
-    public AudioSource ending;
+    public AudioClip start;
+    public AudioClip loop;
+    public AudioClip ending;
   }
 }

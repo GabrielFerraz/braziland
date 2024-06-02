@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,15 +12,17 @@ namespace CookingScripts {
     private float recipeDuration;
     private bool isPreparing = false;
     private RectTransform meterBar;
-    private float t = 0;
+    private string currentAudio = "start";
 
     public string toolName = "";
+    public AudioSource source;
     
     public void SetInitial(string tName, string currentPos, RecipeScriptableObj[] recipeList, RectTransform meter) {
       currentPosition = currentPos;
       recipes = recipeList;
       toolName = tName;
       meterBar = meter;
+      source = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -29,13 +32,23 @@ namespace CookingScripts {
         var value = Time.deltaTime * (1/ possibleRecipe.duration);
         size.x += value;
         meterBar.localScale = size;
-        Debug.Log("value: " + size);
-        Debug.Log("preparing");
+        if (!source.isPlaying && currentAudio == "start") {
+          currentAudio = "loop";
+          source.clip = possibleRecipe.loop;
+          source.loop = true;
+          source.Play();
+        }
+        if (recipeDuration <= possibleRecipe.ending.length && currentAudio == "loop") {
+          currentAudio = "ending";
+          source.Stop();
+          source.loop = false;
+          source.clip = possibleRecipe.ending;
+          source.Play();
+        }
       }
 
       if (recipeDuration <= 0 && isPreparing) {
         isPreparing = false;
-        Debug.Log("done");
       }
     }
 
@@ -59,10 +72,11 @@ namespace CookingScripts {
         StartPreparing();
       }
     }
-
     private void StartPreparing() {
       recipeDuration = possibleRecipe.duration;
       isPreparing = true;
+      source.clip = possibleRecipe.start;
+      source.Play();
     }
   }
 }

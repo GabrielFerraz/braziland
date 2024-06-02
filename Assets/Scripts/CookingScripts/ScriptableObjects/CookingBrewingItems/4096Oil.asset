@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72858bfa96fb43dfa62231a2eeb5a7e5, type: 3}
-  m_Name: Chamomile
+  m_Name: 4096Oil
   m_EditorClassIdentifier: 
-  number: 2
+  number: 4096
+  image: {fileID: 0}
