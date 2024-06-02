@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,11 +19,13 @@ public class InventoryControl : MonoBehaviour
 
     public Transform itemContent;
     public GameObject inventoryItemPrefab;
-
     public TMPro.TextMeshProUGUI inventoryTitle;
+    public UnityEngine.UI.Button inventoryClose;
 
     [NaughtyAttributes.ReadOnly]
     public InventoryItemModel selectedItem;
+
+    public GameObject dropPopup;
 
     #region MONO
     private void OnDisable()
@@ -31,6 +34,12 @@ public class InventoryControl : MonoBehaviour
         IngredientsOpen.OnRaise.RemoveAllListeners();
         TeaPlantsOpen.OnRaise.RemoveAllListeners();
     }
+
+    internal void PromptDrop()
+    {
+        dropPopup.SetActive(true);
+    }
+
     private void OnEnable()
     {
         ToolsOpen.OnRaise.AddListener((x) => LoadTools());
@@ -117,5 +126,16 @@ public class InventoryControl : MonoBehaviour
         // close the active popup. 
         if (selectedItem == null) return;
         selectedItem.ActivatePopUp(false);
+    }
+
+    public void UseSelectedItem()
+    {
+        inventoryClose.onClick?.Invoke();
+        Debug.Log("Item to use is; " + selectedItem.itemName);
+    }
+    public void DropSeletedItem()
+    {
+        // drop item. 
+        Debug.Log("Selected Item to be dropped " + selectedItem.itemName);
     }
 }

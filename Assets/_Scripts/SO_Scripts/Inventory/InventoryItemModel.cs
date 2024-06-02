@@ -28,11 +28,13 @@ public class InventoryItemModel : MonoBehaviour
         {
             ActivatePopUp();
         });
-        useBtn.onClick.AddListener(() =>
-        {
-        });
+        //useBtn.onClick.AddListener(() =>
+        //{
+
+        //});
         dropBtn.onClick.AddListener(() =>
         {
+            Instance.PromptDrop();
         });
     }
     // Start is called before the first frame update
@@ -53,6 +55,7 @@ public class InventoryItemModel : MonoBehaviour
 
     public void ActivatePopUp(bool isOn = true)
     {
+        return; // don't use this for now. 
         optionsPopup.SetActive(isOn);
         if (!isOn)
         {
@@ -62,7 +65,14 @@ public class InventoryItemModel : MonoBehaviour
         if (isOn)
         {
             Instance.CloseActivePopup();
-            Instance.selectedItem = this;
+            //Instance.selectedItem = this;
         }
+    }
+
+    public void SelectItem()
+    {
+        Instance.selectedItem = this;
+        //Instance.PromptUse(); 
+        Instance.UseSelectedItem();
     }
 }
