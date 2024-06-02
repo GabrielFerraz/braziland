@@ -26,7 +26,8 @@ public class DragAndDropTool : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     }
 
     public void OnDrag(PointerEventData eventData) {
-        rect.anchoredPosition += eventData.delta;
+        // rect.anchoredPosition += eventData.delta;
+        rect.position = eventData.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData) {

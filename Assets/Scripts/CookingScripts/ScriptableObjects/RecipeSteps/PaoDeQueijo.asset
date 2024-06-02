@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cef68ebc2114f1da68717c90d55d074, type: 3}
-  m_Name: Dough
+  m_Name: PaoDeQueijo
   m_EditorClassIdentifier: 
-  sum: 1136
-  duration: 8
+  sum: -1
+  duration: 0
   result: {fileID: 0}
-  preparationPosition: C1
+  preparationPosition: O1
   utensilNeeded: 
-  start: {fileID: 8300000, guid: cf83c602d1fd3be4fac664d4e116a232, type: 3}
-  loop: {fileID: 8300000, guid: 45fdc5a438fc7494db10912f0a0b1985, type: 3}
-  ending: {fileID: 8300000, guid: 32280825aba1a6e42823c7cb09693be0, type: 3}
+  start: {fileID: 0}
+  loop: {fileID: 0}
+  ending: {fileID: 0}

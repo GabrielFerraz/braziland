@@ -15,7 +15,7 @@ MonoBehaviour:
   sum: 6
   duration: 10
   result: {fileID: 11400000, guid: bef256941f51acb42b0aa24a10c3122c, type: 2}
-  preparationPosition: StovePosition
+  preparationPosition: S1
   utensilNeeded: 
   start: {fileID: 8300000, guid: 03ce63371d91e3f47873bc9ed779c37d, type: 3}
   loop: {fileID: 8300000, guid: c67d7b65438973641b3e778803381d52, type: 3}
