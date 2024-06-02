@@ -9,11 +9,10 @@ public class Player : MonoBehaviour
 
     public Inventory inventory;
 
-    public TileManager tileManager;
 
     private void Awake()
     {
-        inventory = new Inventory(21);
+        inventory = new Inventory(18);
     }
     void Update()
     {
@@ -22,10 +21,9 @@ public class Player : MonoBehaviour
             Vector3Int position = new Vector3Int((int)transform.position.x,
                 (int)transform.position.y, 0);
 
-            if ( tileManager != null &&  tileManager.IsInteractable(position))
+            if ( GameManager.instance.tileManager != null && GameManager.instance.tileManager.IsInteractable(position))
             {
-                Debug.Log("Tile manager not null");
-                 tileManager.SetInteracted(position);
+                 GameManager.instance.tileManager.SetInteracted(position);
             }
         }
     }
@@ -34,7 +32,7 @@ public class Player : MonoBehaviour
     {
         Vector2 spawnLocation = transform.position;
 
-        Vector2 spawnOffset = Random.insideUnitCircle * 1.5f;
+        Vector2 spawnOffset = Random.insideUnitCircle * 4f;
 
         Item droppedItem = Instantiate(item, spawnLocation + spawnOffset,
         Quaternion.identity);

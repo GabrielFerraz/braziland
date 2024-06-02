@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory_UI : MonoBehaviour
 {
@@ -10,12 +11,15 @@ public class Inventory_UI : MonoBehaviour
 
     public List<Slot_UI> slots = new List<Slot_UI>();
 
-    public ItemManager itemManager;
+    [SerializeField] private Canvas canvas;
 
+    private Slot_UI draggedSlot;
 
-    public void Awake()
+    private Image draggedIcon;
+
+    private void Awake()
     {
-        itemManager = GetComponent<ItemManager>();
+        canvas = FindObjectOfType<Canvas>();
     }
 
     void Update()
@@ -56,15 +60,37 @@ public class Inventory_UI : MonoBehaviour
     }
     public void Remove(int slotID)
     {
-        Debug.Log("Remove button clicked");
-        Item itemToDrop = itemManager.GetItemByName(
-        player.inventory.slots[slotID].itemName);
-
-        if (itemToDrop != null)
+        if (player != null && player.inventory != null && player.inventory.slots != null)
         {
-            player.DropItem(itemToDrop);
-            player.inventory.Remove(slotID);
-            Refresh();
+            
+            Item itemToDrop = GameManager.instance.itemManager.GetItemByName(player.inventory.slots[slotID].itemName);
+
+            if (itemToDrop != null)
+            {
+                player.DropItem(itemToDrop);
+                player.inventory.Remove(slotID);
+                Refresh();
+            }
         }
+
+    }
+    public void SlotBeginDrag(Slot_UI slot)
+    {
+        draggedSlot = slot;
+        draggedIcon = Instantiate(draggedSlot.itemIcon);
+        Debug.Log("Start Drag: " + draggedSlot.name);
+    }
+    public void SlotDrag() {
+
+        Debug.Log("Dragging: " + draggedSlot.name);
+    }
+    public void SlotEndDrag() {
+
+        Debug.Log("Done Dragging: " + draggedSlot.name);
+    }
+    public void SlotDrop(Slot_UI slot)
+    {
+
+        Debug.Log("Dropped " + draggedSlot.name + " on " + slot.name);
     }
 }

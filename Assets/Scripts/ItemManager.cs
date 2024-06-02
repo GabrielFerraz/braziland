@@ -27,9 +27,10 @@ public class ItemManager : MonoBehaviour
     }
 
     public Item GetItemByName(string key)
-    { 
+    {
+        
 
-            if (nameToItemDict.ContainsKey(key))
+        if (nameToItemDict.ContainsKey(key))
                 return nameToItemDict[key];
             return null;
     }
