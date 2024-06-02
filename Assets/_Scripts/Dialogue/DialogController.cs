@@ -116,6 +116,7 @@ public class DialogController : MonoBehaviour
     }
     public void InitiateDialog(DialogData _dialogToUse, int conversationID, bool startImmediate = false)
     {
+        Debug.Log("Dialog to use is: " + _dialogToUse);
         runningDialog = _dialogToUse;
         runningConversation = _dialogToUse.conversationList[conversationID];
         // get chapter, for now we assume it's first. 

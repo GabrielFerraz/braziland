@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class LetterData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public CharacterData author; // used to quickly navigate stuff like profile and others. 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [TextArea(3, 3)]
+    public List<string> letterContent; // 0 for intro, 1 for continuation? 
+
+    public List<string> personalityCues; // to build a list of personality cues. 
+
+    public bool isDelivered;
+    public bool isRead;
+
 }
