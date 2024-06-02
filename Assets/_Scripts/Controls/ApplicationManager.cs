@@ -6,16 +6,6 @@ public class ApplicationManager : MonoBehaviour
 {
     public static ApplicationManager instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(instance.gameObject);
-
-        DontDestroyOnLoad(this);
-    }
-
     public GameEvent @SceneChange; // called by scene loader script when it's changing scenes. 
 
     private void OnEnable()
