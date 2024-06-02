@@ -385,7 +385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &85112661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2248,12 +2248,12 @@ GameObject:
   m_Component:
   - component: {fileID: 605124979}
   m_Layer: 5
-  m_Name: Test
+  m_Name: TestDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &605124979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3229,15 +3229,14 @@ MonoBehaviour:
   m_text: 'Personality
 
 
-    Vampire that loves salty treats until they contain
-    garlic.
+    Vampire that loves salty treats until they contain garlic.
 
 
-    Little bit of a pessimist.
+    Little
+    bit of a pessimist.
 
 
-    Most usually tired, bcz of work
-    anxiety.'
+    Most usually tired, bcz of work anxiety.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8022,7 +8021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4061996930277846867
 RectTransform:
   m_ObjectHideFlags: 0
