@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LetterData : MonoBehaviour
+
+[CreateAssetMenu(menuName = "Letter", fileName = "Letter")]
+public class LetterData : ScriptableObject
 {
     public CharacterData author; // used to quickly navigate stuff like profile and others. 
 
