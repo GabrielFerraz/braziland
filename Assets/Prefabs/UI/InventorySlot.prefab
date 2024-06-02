@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33910aa32786684ab583b6cbf6faf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotID: 0
   itemIcon: {fileID: 3338644030494795177}
   quantityText: {fileID: 4019308678518161846}
   highlight: {fileID: 0}
@@ -142,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1444762424048939896
 RectTransform:
   m_ObjectHideFlags: 0
@@ -581,7 +582,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 64e0d4dc7fc017d458369c9e809389c7, type: 2}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

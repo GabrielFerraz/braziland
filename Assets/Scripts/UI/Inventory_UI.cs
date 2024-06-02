@@ -18,6 +18,7 @@ public class Inventory_UI : MonoBehaviour
     private Slot_UI draggedSlot;
 
     private Image draggedIcon;
+    private bool dragSingle;
 
     private void Awake()
     {
@@ -29,6 +30,14 @@ public class Inventory_UI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleInventory();
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            dragSingle = true;
+        }
+        else
+        {
+            dragSingle = false;
         }
     }
     public void ToggleInventory()
@@ -69,8 +78,18 @@ public class Inventory_UI : MonoBehaviour
 
             if (itemToDrop != null)
             {
-                player.DropItem(itemToDrop);
-                player.inventory.Remove(draggedSlot.slotID);
+                if (dragSingle)
+                {
+                    player.DropItem(itemToDrop);
+                    player.inventory.Remove(draggedSlot.slotID);
+
+                }
+                else
+                {
+                    player.DropItem(itemToDrop, player.inventory.slots[draggedSlot.slotID].count);
+                    player.inventory.Remove(draggedSlot.slotID, player.inventory.slots[draggedSlot.slotID].count);
+
+                }
                 Refresh();
             }
         }
@@ -84,7 +103,7 @@ public class Inventory_UI : MonoBehaviour
         draggedIcon = Instantiate(draggedSlot.itemIcon);
         draggedIcon.transform.SetParent(canvas.transform);
         draggedIcon.raycastTarget = false;
-        draggedIcon.rectTransform.sizeDelta = new Vector2(1,1);
+        draggedIcon.rectTransform.sizeDelta = new Vector2(0.2f,0.2f);
         MoveToMousePosition(draggedIcon.gameObject);
         Debug.Log("Start Drag: " + draggedSlot.name);
     }
@@ -97,9 +116,13 @@ public class Inventory_UI : MonoBehaviour
     public void SlotEndDrag() 
     {
         Destroy(draggedIcon.gameObject);
+
         draggedIcon = null;
 
+
         Debug.Log("Done Dragging: " + draggedSlot.name);
+        Remove();
+
     }
     public void SlotDrop(Slot_UI slot)
     {
