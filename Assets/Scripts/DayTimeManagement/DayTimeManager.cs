@@ -9,13 +9,15 @@ using System;
 public class DayTimeManager : MonoBehaviour
 {
     const float secondsInDay = 86400f;
-
+    const float phaseLength = 900f; // 15 minutes chunk of time
     [SerializeField] Color nightLightColor;
     [SerializeField] AnimationCurve nightTimeCurve;
     [SerializeField] Color dayLightColor = Color.white;
 
     float time;
     [SerializeField] float timeScale = 60f;
+
+    [SerializeField] float startAtTime = 28800f; // in seconds
     [SerializeField] TextMeshProUGUI text;
     //[SerializeField] Light2D globalLight;
     private int days;
@@ -26,6 +28,12 @@ public class DayTimeManager : MonoBehaviour
     {
 
         agents = new List<TimeAgent>();
+    }
+
+    private void Start()
+    {
+        
+        time = startAtTime;
     }
 
     public void Subscribe(TimeAgent timeAgent)
@@ -51,17 +59,43 @@ public class DayTimeManager : MonoBehaviour
     {
 
         time += Time.deltaTime * timeScale;
-        int hh = (int)Hours;
-        int mm = (int)Minutes;
-
-        text.text = hh.ToString("00") + ":" + mm.ToString("00");
-        float v = nightTimeCurve.Evaluate(Hours);
-        Color c = Color.Lerp(dayLightColor, nightLightColor, v);
-        //globalLight.color = c;
+        TimeValueCalculation();
+        DayLight();
         if (time > secondsInDay)
         {
             NextDay();
         }
+
+        TimeAgents();
+    }
+    int oldPhase = 0;
+    private void TimeAgents()
+    {
+        int currentPhase = (int)(time / phaseLength);
+        if (oldPhase != currentPhase)
+        {
+            oldPhase = currentPhase;
+            for (int i = 0; i < agents.Count; i++)
+            {
+                agents[i].Invoke();
+            }
+        }
+       
+    }
+
+    private void DayLight()
+    {
+        float v = nightTimeCurve.Evaluate(Hours);
+        Color c = Color.Lerp(dayLightColor, nightLightColor, v);
+        //globalLight.color = c;
+    }
+
+    private void TimeValueCalculation()
+    {
+        int hh = (int)Hours;
+        int mm = (int)Minutes;
+
+        text.text = hh.ToString("00") + ":" + mm.ToString("00");
     }
 
     private void NextDay()

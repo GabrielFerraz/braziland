@@ -6612,6 +6612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileManager: {fileID: 0}
   itemManager: {fileID: 0}
+  TimeManager: {fileID: 1218998587}
 --- !u!114 &1218998584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6759,7 +6760,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dayLightColor: {r: 1, g: 1, b: 1, a: 1}
-  timeScale: 400
+  timeScale: 600
   text: {fileID: 1502639840}
 --- !u!1001 &1222158547
 PrefabInstance:
