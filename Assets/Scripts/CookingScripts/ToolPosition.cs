@@ -7,11 +7,12 @@ using UnityEngine.UI;
 namespace CookingScripts {
   public class ToolPosition : MonoBehaviour {
 
-    private string activeTool = "";
     private DragAndDropTool activeToolObj;
     
+    public string activeTool = "";
     public Image img;
     public List<string> allowedTools;
+    public CookingController cookingCtrl;
 
     private void Start() {
       img = GetComponent<Image>();
@@ -35,13 +36,19 @@ namespace CookingScripts {
         if (activeTool != "") return;
         activeTool = toolName;
         img.color = new Color(255, 255, 255, 1f);
+        cookingCtrl.AddActiveTool(toolName, gameObject.name);
       } else {
         gameObject.SetActive(false);
+        cookingCtrl.RemoveActiveTool(toolName);
       }
     }
 
     public bool CanPlace(string toolName) {
       return activeTool == "" && allowedTools.Contains(toolName);
+    }
+
+    public void AddIngredient(int ingredientNumber) {
+      cookingCtrl.AddItem(activeTool, ingredientNumber);
     }
   }
 }

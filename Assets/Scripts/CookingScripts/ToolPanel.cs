@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class ToolPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
     
-    public GameObject panel;
-
     private Outline outline; 
+    
+    public GameObject panel;
 
     void Start() {
         outline = GetComponent<Outline>();
