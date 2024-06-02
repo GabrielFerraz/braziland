@@ -13,21 +13,20 @@ public class LetterModel : MonoBehaviour
     public TextMeshProUGUI letterDescription;
     public Image letterIcon;
 
+    public Button btnLetter;
     [NaughtyAttributes.Button("Test Init Model")]
     public void InitModel()
     {
-        int date = LetterSchedule.scheduler.currentDay;
-
-        letterDescription.SetText("Delivered by: " + letter.author.characterName + '\n' + "Day: " + date);
-        letterIcon.sprite = letter.author.mainProfile;
-    }
-
-    private void Awake()
-    {
-        GetComponent<Button>().onClick.AddListener(() =>
+        btnLetter.onClick.AddListener(() =>
         {
             LetterSchedule.scheduler.currentSelectedLetter = this.letter;
             LetterSchedule.scheduler.ReadLetter();
+
+            letter.isRead = true;
         });
+        int date = LetterSchedule.scheduler.currentDay;
+
+        letterDescription.SetText("Delivered by: " + letter.author.characterName + '\n' + "Day: " + (date + 1));
+        letterIcon.sprite = letter.author.mainProfile;
     }
 }

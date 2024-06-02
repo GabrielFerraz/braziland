@@ -14,6 +14,7 @@ public class CharacterData : ScriptableObject
     public CharacterType characterType;
 
     public string characterName;
+    public string species;
 
     [ShowIf("IsNpc")]
     public List<DialogData> dialogData;

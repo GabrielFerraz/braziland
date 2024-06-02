@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81ae81628db33f4e8ada8ba7e2a4b81, type: 3}
-  m_Name: Samuel
+  m_Name: Yei
   m_EditorClassIdentifier: 
   mainProfile: {fileID: 21300000, guid: 2e89f9fca16d56b49bc1b277e2bcf57b, type: 3}
   characterType: 0
-  characterName: Samuel
-  species: Vampire
+  characterName: Yei
+  species: Yeti
   dialogData:
   - {fileID: 11400000, guid: 95c2bfe7133670b459a236d56cade7a7, type: 2}
   - {fileID: 11400000, guid: cd99fc03e623425499895eb575c8e251, type: 2}

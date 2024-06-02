@@ -425,3 +425,4 @@ MonoBehaviour:
   letter: {fileID: 0}
   letterDescription: {fileID: 5934915478210956324}
   letterIcon: {fileID: 3824320325618317272}
+  btnLetter: {fileID: 8028565514605892635}
