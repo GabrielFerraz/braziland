@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Whisk
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: 35ce5ba6b475e0d4fb848779856b84b7, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: 7d427b5d17f4f384b89729da57962249, type: 3}
   m_ItemName: Whisk
   m_Type: 1
   m_QuantityHeld: 0

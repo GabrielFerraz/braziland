@@ -41,6 +41,8 @@ public class DialogController : MonoBehaviour
     [ShowIf("hasDialogMusic")]
     public AudioSource mainSource;
 
+    public AudioSource barkSource;
+
     private DialogData runningDialog;
     private DialogData.Conversation runningConversation;
 
@@ -184,6 +186,13 @@ public class DialogController : MonoBehaviour
         {
             Debug.Log("Play one shot audio clip for voice: " + runningConversation
                 .dialogues[dialogIdx].voice);
+        }
+
+        if (runningConversation
+            .dialogues[dialogIdx].barkSound != null)
+        {
+            barkSource.PlayOneShot(runningConversation
+            .dialogues[dialogIdx].barkSound);
         }
     }
     public void NextDialog()

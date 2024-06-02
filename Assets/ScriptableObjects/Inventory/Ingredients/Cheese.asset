@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Cheese
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: a92c0e8d42bb7cb499f0f754aa658a39, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: f0ddf99c041aac940997a6ab9d4e5cd9, type: 3}
   m_ItemName: Cheese
   m_Type: 2
   m_QuantityHeld: 3

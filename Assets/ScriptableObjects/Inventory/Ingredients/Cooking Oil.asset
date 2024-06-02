@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Cooking Oil
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: c70a95940b6249a4fb89681bf9f853ce, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: cd95f46c7485dc34d891c9e0661c80b8, type: 3}
   m_ItemName: Cooking Oil
   m_Type: 2
   m_QuantityHeld: 3

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Kettle
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: 4d165c7f77d862f4995146c0e992f65c, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: c7b600e3885d9104ea7b9b68c2c5abbc, type: 3}
   m_ItemName: Kettle
   m_Type: 1
   m_QuantityHeld: 0

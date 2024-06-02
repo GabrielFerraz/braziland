@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
-  m_Name: Fryer
+  m_Name: Cocoa
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: 1120e24a2d2ded34d9b028a37753c907, type: 3}
-  m_ItemName: Fryer
-  m_Type: 1
-  m_QuantityHeld: 0
+  m_ItemIcon: {fileID: 21300000, guid: a9a79ed6021b8be4fb0e08f075d58bb6, type: 3}
+  m_ItemName: Cocoa
+  m_Type: 2
+  m_QuantityHeld: 5

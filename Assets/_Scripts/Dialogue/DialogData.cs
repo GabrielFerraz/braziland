@@ -28,6 +28,8 @@ public class DialogData : ScriptableObject
         public SpeakerData speaker;
         [TextArea(3, 4)] public string line;
 
+        public AudioClip barkSound;
+
         public PortraitEmotions dialogExpression;
 
         public bool isVoiceOver;

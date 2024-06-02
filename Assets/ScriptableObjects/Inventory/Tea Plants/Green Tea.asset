@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Green Tea
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: 80cb314708ffbc740849ccb99b518345, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: 25535894e72890446b339eedc6971f23, type: 3}
   m_ItemName: Green Tea
   m_Type: 0
   m_QuantityHeld: 2

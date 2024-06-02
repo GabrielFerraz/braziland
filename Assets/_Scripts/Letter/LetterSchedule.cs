@@ -30,10 +30,12 @@ public class LetterSchedule : MonoBehaviour
 
     [Header("Dynamic Areas")]
     public TextMeshProUGUI contentText;
+    public Image contentImage;
     public TextMeshProUGUI authorNPC;
     public TextMeshProUGUI readingDate;
     public Transform profileParent;
 
+    public bool isSpriteContent;
 
     public GameObject mailBoxNotif;
 
@@ -107,8 +109,16 @@ public class LetterSchedule : MonoBehaviour
         nextContent.gameObject.SetActive(false);
         endRead.gameObject.SetActive(true);
 
-        // we should only have 2 content for now. since we use magic numbers. 
-        contentText.SetText(currentSelectedLetter.letterContent[1]);
+        if (!isSpriteContent)
+        {
+            // we should only have 2 content for now. since we use magic numbers. 
+            contentText.SetText(currentSelectedLetter.letterContent[1]);
+        }
+        else
+        {
+            contentImage.sprite = currentSelectedLetter.letterContentSprite[0];
+        }
+
     }
 
 
@@ -123,7 +133,13 @@ public class LetterSchedule : MonoBehaviour
         nextContent.gameObject.SetActive(true);
         letterReadContent.SetActive(true);
 
-        contentText.SetText(currentSelectedLetter.letterContent[0]);
+        if (!isSpriteContent)
+            contentText.SetText(currentSelectedLetter.letterContent[0]);
+        else
+        {
+            letterReadContent.SetActive(false); 
+            NextContent();
+        }
     }
 
 

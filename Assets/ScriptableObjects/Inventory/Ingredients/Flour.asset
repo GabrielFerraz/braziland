@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
-  m_Name: A Tea
+  m_Name: Flour
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: 2268251166236704592a051bdffc9949, type: 3}
-  m_ItemName: Tea
-  m_Type: 0
-  m_QuantityHeld: 3
+  m_ItemIcon: {fileID: 21300000, guid: 31127568ed82f7349b44821b47c2a614, type: 3}
+  m_ItemName: Flour
+  m_Type: 2
+  m_QuantityHeld: 5

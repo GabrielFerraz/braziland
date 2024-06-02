@@ -26,5 +26,8 @@ MonoBehaviour:
   - Vampire that loves Salty treaats until they contain garlic
   - Little bit of a pessimist
   - Most usually tired, because of work anxiety
+  isSpriteContent: 1
+  letterContentSprite:
+  - {fileID: 21300000, guid: 058e1ea6163ecf34bb81f3d00cd71a54, type: 3}
   isDelivered: 0
   isRead: 0

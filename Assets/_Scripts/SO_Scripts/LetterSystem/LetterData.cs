@@ -13,6 +13,11 @@ public class LetterData : ScriptableObject
 
     public List<string> personalityCues; // to build a list of personality cues. 
 
+    public bool isSpriteContent;
+
+    [NaughtyAttributes.ShowIf("isSpriteContent")]
+    public List<Sprite> letterContentSprite;
+
     public bool isDelivered;
     public bool isRead;
 

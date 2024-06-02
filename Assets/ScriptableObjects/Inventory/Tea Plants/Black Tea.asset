@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Black Tea
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: e0d99c82422c95a45be117a064a173a5, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: 28a84d56298180248b59f966316caecb, type: 3}
   m_ItemName: Black Tea
   m_Type: 0
-  m_QuantityHeld: 2
+  m_QuantityHeld: 3

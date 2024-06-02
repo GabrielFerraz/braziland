@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Egg
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: da40a9840d8f7224391e31f904b8671f, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: 27ea804f6d231104a9a6365f1ed31038, type: 3}
   m_ItemName: Cheese
   m_Type: 2
   m_QuantityHeld: 7

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59213d6844aefd5418603858c1be41e9, type: 3}
   m_Name: Pot
   m_EditorClassIdentifier: 
-  m_ItemIcon: {fileID: 21300000, guid: 390be9396724592438e58d162f35b530, type: 3}
+  m_ItemIcon: {fileID: 21300000, guid: a52714a405cde6c458f003a52b392e88, type: 3}
   m_ItemName: Cooking Pot
   m_Type: 1
   m_QuantityHeld: 0

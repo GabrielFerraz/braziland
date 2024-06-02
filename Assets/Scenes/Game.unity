@@ -748,9 +748,11 @@ MonoBehaviour:
   nextContent: {fileID: 1629515751}
   endRead: {fileID: 36884186}
   contentText: {fileID: 12487033}
+  contentImage: {fileID: 2105380225}
   authorNPC: {fileID: 997458562}
   readingDate: {fileID: 792146922}
   profileParent: {fileID: 221669218}
+  isSpriteContent: 1
   mailBoxNotif: {fileID: 1151816370}
 --- !u!1 &107544703
 GameObject:
@@ -1815,20 +1817,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItems:
-  - {fileID: 11400000, guid: 677b227470c04a74d82db7f2bef3e889, type: 2}
-  - {fileID: 11400000, guid: 5783958580ce8dd4ca794df7656625f8, type: 2}
-  - {fileID: 11400000, guid: 451878b189e24004ab18450960320b12, type: 2}
-  - {fileID: 11400000, guid: b555bb883e37ba942ad70f3d51c23e9c, type: 2}
-  - {fileID: 11400000, guid: cc3d484eaf955494b9f4f86c3605b1d8, type: 2}
+  - {fileID: 11400000, guid: 31291502990936640bb45ceb5ab9fdce, type: 2}
+  - {fileID: 11400000, guid: 3c9f13e12440b6247a3c6cd706482caa, type: 2}
+  - {fileID: 11400000, guid: 04db3dc245831f348a6a91012abc3b3a, type: 2}
   - {fileID: 11400000, guid: 88af44478d0dafb4db694e4852a9ae1c, type: 2}
+  - {fileID: 11400000, guid: a7998ef612502f142b112dd26bae40ad, type: 2}
   - {fileID: 11400000, guid: 58619d88359261c439303af2a91cd37c, type: 2}
   - {fileID: 11400000, guid: 5d7f804cb6f142748a5976d55d501bd3, type: 2}
+  - {fileID: 11400000, guid: cb2f3036c3756d44f81d09f36fde8e46, type: 2}
   - {fileID: 11400000, guid: ac23a43aaf40d614b91c60dc12911c34, type: 2}
   - {fileID: 11400000, guid: ad7af378d63f95c49bb8f1d71c1a7d42, type: 2}
+  - {fileID: 11400000, guid: 20e5e79fa2c808344976ae786cb3e0d4, type: 2}
+  - {fileID: 11400000, guid: dc4625a11654d844b96a73394c3aef6e, type: 2}
+  - {fileID: 11400000, guid: a9efa7fbd2a4d284d832f43f7d96c251, type: 2}
+  - {fileID: 11400000, guid: 1e6d2a38fd62034408700f4f9515df6a, type: 2}
   - {fileID: 11400000, guid: bd7d7397877b2d746a809c08ec40aa8e, type: 2}
   - {fileID: 11400000, guid: a336a3e96ff908c46b9520bfc218dc9d, type: 2}
   - {fileID: 11400000, guid: a3f91e3c40155c447af7388773e7138f, type: 2}
   - {fileID: 11400000, guid: 229869ab949c0204ca7a6154200eadac, type: 2}
+  - {fileID: 11400000, guid: 677b227470c04a74d82db7f2bef3e889, type: 2}
+  - {fileID: 11400000, guid: 1ecab323898fb9845899d9e94c81448a, type: 2}
+  - {fileID: 11400000, guid: cc3d484eaf955494b9f4f86c3605b1d8, type: 2}
+  - {fileID: 11400000, guid: 5783958580ce8dd4ca794df7656625f8, type: 2}
+  - {fileID: 11400000, guid: 4207338030348ec4b816902b16c8d2cc, type: 2}
+  - {fileID: 11400000, guid: 451878b189e24004ab18450960320b12, type: 2}
+  - {fileID: 11400000, guid: b555bb883e37ba942ad70f3d51c23e9c, type: 2}
   IngredientsOpen: {fileID: 11400000, guid: 47c09c7845bd00e4ab32089e72b14afc, type: 2}
   ToolsOpen: {fileID: 11400000, guid: a8c08c145cf8df74b8c632c278b26d92, type: 2}
   TeaPlantsOpen: {fileID: 11400000, guid: 302cc00037a14a7438bf05b5971ea78c, type: 2}
@@ -2816,7 +2829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &493747859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7547,6 +7560,7 @@ GameObject:
   - component: {fileID: 1562858666}
   - component: {fileID: 1562858665}
   - component: {fileID: 1562858669}
+  - component: {fileID: 1562858670}
   m_Layer: 5
   m_Name: DialogCanvas
   m_TagString: Untagged
@@ -7662,6 +7676,103 @@ MonoBehaviour:
   endingConversation: {fileID: 0}
   hasDialogMusic: 0
   mainSource: {fileID: 0}
+  barkSource: {fileID: 0}
+--- !u!82 &1562858670
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562858664}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1572971656
 GameObject:
   m_ObjectHideFlags: 0
@@ -9164,7 +9275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1775030939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11033,7 +11144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d60dfc0168537fa49848c6941636a912, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 058e1ea6163ecf34bb81f3d00cd71a54, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
