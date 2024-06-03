@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     public int numTomato = 0;
-
 
     public Inventory inventory;
 

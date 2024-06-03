@@ -10,6 +10,12 @@ public class TimeAgent : MonoBehaviour
     private void Start()
     {
 
+            Init();
+    }
+
+    public void Init()
+    {
+
         GameManager.instance.timeManager.Subscribe(this);
 
     }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public TileManager tileManager;
     public ItemManager itemManager;
     public  DayTimeManager timeManager;
+    public Player player;
     private void Awake()
     {
 

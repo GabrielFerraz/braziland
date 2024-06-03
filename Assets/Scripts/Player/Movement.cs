@@ -14,6 +14,11 @@ public class Movement : MonoBehaviour
 
     private Vector3 direction;
 
+    public Vector3 lastDirection;
+
+    public bool moving;
+
+
     void Update()
     {
 
@@ -29,6 +34,16 @@ public class Movement : MonoBehaviour
         if (direction.x == 1 && !facingright) Flip();
         else if (direction.x == -1 && facingright) Flip();
 
+        moving = horizontal != 0 || vertical != 0;
+        animator.SetBool("IsMoving", moving);
+
+        if (horizontal != 0 || vertical != 0)
+            lastDirection = new Vector3(
+                horizontal
+                ,vertical
+                ).normalized;
+        animator.SetFloat("lastHorizontal", horizontal);
+        animator.SetFloat("lastVertical", vertical);
     }
     
     private void Flip()

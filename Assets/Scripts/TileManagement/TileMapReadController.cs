@@ -9,7 +9,7 @@ public class TileMapReadController : MonoBehaviour
     [SerializeField] List<TileData> tileDatas;
     [SerializeField] MarkerManager markerManager;
 
-
+    [SerializeField] public CropsManager cropsManager;
     Dictionary<TileBase, TileData> dataFromTiles;
 
 

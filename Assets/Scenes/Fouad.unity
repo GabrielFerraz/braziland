@@ -3870,6 +3870,7 @@ GameObject:
   - component: {fileID: 389272230}
   - component: {fileID: 389272232}
   - component: {fileID: 389272231}
+  - component: {fileID: 389272233}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -3935,6 +3936,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389272229}
   m_CullTransparentMesh: 1
+--- !u!114 &389272233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389272229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84373a11ebdbadd4b87686ef6870aa7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolbarSize: 6
 --- !u!1001 &391689711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6612,7 +6626,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileManager: {fileID: 0}
   itemManager: {fileID: 0}
-  TimeManager: {fileID: 1218998587}
+  timeManager: {fileID: 1218998587}
+  player: {fileID: 2007871308}
 --- !u!114 &1218998584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6644,6 +6659,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3f13ae5d0a8ec748af85e74b1b0a839, type: 2}
   - {fileID: 11400000, guid: a1a78e5392dac2744bfe6c12ce9c1beb, type: 2}
   markerManager: {fileID: 0}
+  cropsManager: {fileID: 0}
 --- !u!114 &1218998586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6659,6 +6675,7 @@ MonoBehaviour:
   plowed: {fileID: 11400000, guid: bb6852119b821be43ba5c8052d840605, type: 2}
   seeded: {fileID: 11400000, guid: 4f4c64679d84b13449fba68f39c15131, type: 2}
   targetTilemap: {fileID: 876811847}
+  cropsSpritePrefab: {fileID: 2124904226859490312, guid: a6c335fcfa5f4f44089b65e8dbac3f97, type: 3}
 --- !u!114 &1218998587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6761,6 +6778,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dayLightColor: {r: 1, g: 1, b: 1, a: 1}
   timeScale: 600
+  startAtTime: 28800
   text: {fileID: 1502639840}
 --- !u!1001 &1222158547
 PrefabInstance:
@@ -21508,6 +21526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   animator: {fileID: 1856901856}
+  lastDirection: {x: 0, y: 0, z: 0}
+  moving: 0
 --- !u!50 &2007871306
 Rigidbody2D:
   serializedVersion: 4
@@ -21614,6 +21634,9 @@ MonoBehaviour:
   maxDistance: 1.5
   cropsManager: {fileID: 1218998586}
   plowableTiles: {fileID: 11400000, guid: a1a78e5392dac2744bfe6c12ce9c1beb, type: 2}
+  toolbarController: {fileID: 389272233}
+  player: {fileID: 2007871308}
+  movement: {fileID: 2007871305}
 --- !u!1001 &2042942034
 PrefabInstance:
   m_ObjectHideFlags: 0

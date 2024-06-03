@@ -7,4 +7,11 @@ public class ItemData : ScriptableObject
 {
     public string itemName = "Item Name";
     public Sprite icon;
+#nullable enable
+    public ToolAction? onAction;
+    public Crop? crop;
+    public ToolAction? onTileMapAction;
+    public ToolAction? onItemUsed;
+
+
 }
