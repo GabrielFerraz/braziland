@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class SceneLoader : MonoBehaviour
     public void LoadGameScene()
     {
         FindObjectOfType<ApplicationManager>().SceneChange.Raise();
-        SceneManager.LoadScene("Game"); // doing straightfoward scene load for test. 
+        SceneManager.LoadScene("MagicHouse"); // doing straightfoward scene load for test. 
+    }
+
+    internal void LoadCookingScene()
+    {
+        FindObjectOfType<ApplicationManager>().SceneChange.Raise();
+        SceneManager.LoadScene("CookingScene");
     }
 }

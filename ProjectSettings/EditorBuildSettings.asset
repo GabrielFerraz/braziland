@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 708678c5beb360744b5bb879519b2043
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 0cb23740b3989464791a5173018565ef
+    path: Assets/Scenes/MagicHouse.unity
+    guid: 4eb949a527bc4cd4fbd9c112778578b9
+  - enabled: 1
+    path: Assets/Scenes/CookingScene.unity
+    guid: 8f13468353c077f4094a9ff11a3634c5
   m_configObjects: {}

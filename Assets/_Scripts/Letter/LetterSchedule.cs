@@ -38,16 +38,25 @@ public class LetterSchedule : MonoBehaviour
     public bool isSpriteContent;
 
     public GameObject mailBoxNotif;
+    public GameObject letterInMail;
+
+
+    [Header("Game Events")]
+    public GameEvent @MailboxAccess;
 
     private void Awake()
     {
         scheduler = this;
-
     }
 
     private void Start()
     {
         DeliverDailyLetters();
+        @MailboxAccess.OnRaise.AddListener((x) => OpenMailBox());
+    }
+    private void OnDestroy()
+    {
+        @MailboxAccess.OnRaise.RemoveAllListeners();
     }
 
     [Button("Test Next day")]
@@ -56,9 +65,15 @@ public class LetterSchedule : MonoBehaviour
         ++currentDay;
         DeliverDailyLetters();
         if (CheckAllRead() && mailBoxNotif != null)
+        {
             mailBoxNotif.SetActive(false);
+            letterInMail.SetActive(false);
+        }
         else
+        {
             mailBoxNotif.SetActive(true);
+            letterInMail.SetActive(false);
+        }
     }
 
     public void DeliverDailyLetters()
@@ -137,7 +152,7 @@ public class LetterSchedule : MonoBehaviour
             contentText.SetText(currentSelectedLetter.letterContent[0]);
         else
         {
-            letterReadContent.SetActive(false); 
+            letterReadContent.SetActive(false);
             NextContent();
         }
     }
@@ -157,9 +172,15 @@ public class LetterSchedule : MonoBehaviour
 
         // check if notice should remain up or note. 
         if (CheckAllRead() && mailBoxNotif != null)
+        {
             mailBoxNotif.SetActive(false);
+            letterInMail.SetActive(false);
+        }
         else
+        {
             mailBoxNotif.SetActive(true);
+            letterInMail.SetActive(true);
+        }
     }
 
     public bool CheckAllRead()
