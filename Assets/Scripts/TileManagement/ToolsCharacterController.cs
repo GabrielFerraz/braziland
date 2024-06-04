@@ -19,6 +19,7 @@ public class ToolsCharacterController : MonoBehaviour
     [SerializeField] ToolbarController toolbarController;
     public Player player;
     public Movement movement;
+    public Crop crop;
 
     Vector3Int selectedTilePosition;
     bool selectable;
@@ -42,7 +43,7 @@ public class ToolsCharacterController : MonoBehaviour
         Marker();
         if (Input.GetMouseButtonDown(0))
         {
-            if(UseToolWorld()) return;
+            //if(UseToolWorld()) return;
             UseToolGrid();
         }
     }
@@ -66,7 +67,7 @@ public class ToolsCharacterController : MonoBehaviour
 
     private bool UseToolWorld()
     {
-        Vector2 position = rgbd2d.position + (Vector2)movement.lastDirection * offsetDistance;
+        Vector2 position = rgbd2d.position + (Vector2)movement.direction * offsetDistance;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
 
@@ -111,19 +112,25 @@ public class ToolsCharacterController : MonoBehaviour
         if (selectable)
         {
 
-            //Item item = GameManager.instance.itemManager.GetItemByName(player.inventory.slots[0].itemName); ;
-            //if (item == null) return;
-            //if(item.data.onTileMapAction == null ) return;
-            //bool complete = item.data.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController,item);
+            Item item = GameManager.instance.itemManager.GetItemByName("Tomato");
+            if (item == null)
+            {
+                return;
+            }
+            
+            if (item.data.onTileMapAction == null) return;
+            bool complete = item.data.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController, item);
             //TileBase tileBase = tileMapReadController.GetTileBase(selectedTilePosition);
             //TileData tileData = tileMapReadController.GetTileData(tileBase);
-            //if (tileData != plowableTiles){return;}
+            //if (tileData != plowableTiles) { return; }
+
+          
             if (cropsManager.Check(selectedTilePosition))
             {
-                //cropsManager.Seed(
-                //    selectedTilePosition
-                //    ,tileMapReadController
-                    //);
+                cropsManager.Seed(
+                    selectedTilePosition
+                    , crop
+                    );
             }
             else
             {

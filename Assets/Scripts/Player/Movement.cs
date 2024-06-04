@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
 
     public Animator animator;
 
-    private Vector3 direction;
+    public Vector3 direction;
 
     public Vector3 lastDirection;
 
@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 direction = new Vector3(horizontal, vertical);
+        direction = new Vector3(horizontal, vertical);
 
         AnimateMovement(direction);
         transform.position += direction.normalized * speed * Time.deltaTime;
@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
         if (horizontal != 0 || vertical != 0)
             lastDirection = new Vector3(
                 horizontal
-                ,vertical
+                , vertical
                 ).normalized;
         animator.SetFloat("lastHorizontal", horizontal);
         animator.SetFloat("lastVertical", vertical);

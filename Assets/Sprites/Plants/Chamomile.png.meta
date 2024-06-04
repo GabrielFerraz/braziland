@@ -144,13 +144,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 965a1d5d8a82bdc45bbaf344b1902f40
+      spriteID: 4960117e617bc534da4c2eac2cb5695d
       internalID: 1550307175
       vertices: []
       indices: 
@@ -163,15 +163,15 @@ TextureImporter:
         x: 28
         y: 0
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 942c13c6b8b3c8c4dac6de06af5a490e
+      spriteID: 438ee60bc80ab8e44bd52c673ecf84e4
       internalID: 1565075189
       vertices: []
       indices: 
@@ -181,18 +181,18 @@ TextureImporter:
       name: Chamomile_2
       rect:
         serializedVersion: 2
-        x: 50
+        x: 52
         y: 0
-        width: 21
-        height: 28
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4de3c54316d97bd499c5e22e3bcab8eb
+      spriteID: 04733b9a9a60eaa41a2f46bf3f8a7b9e
       internalID: 1843138731
       vertices: []
       indices: 
@@ -202,19 +202,19 @@ TextureImporter:
       name: Chamomile_3
       rect:
         serializedVersion: 2
-        x: 73
+        x: 76
         y: 0
-        width: 23
-        height: 28
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77dc7f365ae9e5847ae4e3092d2dc481
-      internalID: -2115089553
+      spriteID: e6fa8d27b31cbc74bad2e7f11a45c487
+      internalID: -1523446821
       vertices: []
       indices: 
       edges: []
@@ -233,7 +233,7 @@ TextureImporter:
       Chamomile_0: 1550307175
       Chamomile_1: 1565075189
       Chamomile_2: 1843138731
-      Chamomile_3: -2115089553
+      Chamomile_3: -1523446821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

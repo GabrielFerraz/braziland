@@ -31,7 +31,7 @@ public class CharacterInteractController : MonoBehaviour
 
     private void Check()
     {
-        Vector2 position = rgbd2d.position + (Vector2) movement.lastDirection * offsetDistance;
+        Vector2 position = rgbd2d.position + (Vector2) movement.direction * offsetDistance;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
         
@@ -51,7 +51,7 @@ public class CharacterInteractController : MonoBehaviour
 
     private void Interact()
     {
-        Vector2 position = rgbd2d.position + (Vector2) movement.lastDirection * offsetDistance;
+        Vector2 position = rgbd2d.position + (Vector2) movement.direction * offsetDistance;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
 

@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.tvOS;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class Inventory_UI : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class Inventory_UI : MonoBehaviour
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>();
+        //Item item = GameManager.instance.itemManager.GetItemByName("Tomato");
+        //player.inventory.Add(item);
+
     }
 
     void Update()
@@ -54,21 +58,31 @@ public class Inventory_UI : MonoBehaviour
     }
     void Refresh()
     {
-        if (slots.Count == player.inventory.slots.Count)
+        if (slots.Count == 
+            player.inventory.slots.Count)
         {
             for (int i = 0; i < slots.Count; i++)
             {
-                if (player.inventory.slots[i].itemName != "")
+                if (i < player.inventory.slots.Count)
                 {
-                    slots[i].SetItem(player.inventory.slots[i]);
+                    if (!string.IsNullOrEmpty(player.inventory.slots[i].itemName))
+                    {
+                        slots[i].SetItem(player.inventory.slots[i]);
+                    }
+                    else
+                    {
+                        slots[i].SetEmpty();
+                    }
                 }
                 else
                 {
+                    // Handle the case where the player's inventory has fewer slots than expected.
                     slots[i].SetEmpty();
                 }
             }
         }
     }
+
     public void Remove()
     {
         if (player != null && player.inventory != null && player.inventory.slots != null)

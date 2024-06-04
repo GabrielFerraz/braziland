@@ -4377,7 +4377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5883545809507461745, guid: 14f3d61a09f423340a2107d13e1baef8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5883545809507461745, guid: 14f3d61a09f423340a2107d13e1baef8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6627,7 +6627,7 @@ MonoBehaviour:
   tileManager: {fileID: 0}
   itemManager: {fileID: 0}
   timeManager: {fileID: 1218998587}
-  player: {fileID: 2007871308}
+  player: {fileID: 0}
 --- !u!114 &1218998584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6658,8 +6658,8 @@ MonoBehaviour:
   tileDatas:
   - {fileID: 11400000, guid: f3f13ae5d0a8ec748af85e74b1b0a839, type: 2}
   - {fileID: 11400000, guid: a1a78e5392dac2744bfe6c12ce9c1beb, type: 2}
-  markerManager: {fileID: 0}
-  cropsManager: {fileID: 0}
+  markerManager: {fileID: 1349520574}
+  cropsManager: {fileID: 1218998586}
 --- !u!114 &1218998586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10268,7 +10268,7 @@ MonoBehaviour:
   - {fileID: 609667151}
   - {fileID: 78320736}
   - {fileID: 1975688424}
-  canvas: {fileID: 0}
+  canvas: {fileID: 1397893558}
 --- !u!1 &1735549691
 GameObject:
   m_ObjectHideFlags: 0
@@ -21526,6 +21526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   animator: {fileID: 1856901856}
+  direction: {x: 0, y: 0, z: 0}
   lastDirection: {x: 0, y: 0, z: 0}
   moving: 0
 --- !u!50 &2007871306
@@ -21612,9 +21613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1327c34296292e9458c3655994cfca9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numTomato: 0
-  inventory:
-    slots: []
 --- !u!114 &2007871309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21635,8 +21633,9 @@ MonoBehaviour:
   cropsManager: {fileID: 1218998586}
   plowableTiles: {fileID: 11400000, guid: a1a78e5392dac2744bfe6c12ce9c1beb, type: 2}
   toolbarController: {fileID: 389272233}
-  player: {fileID: 2007871308}
+  player: {fileID: 0}
   movement: {fileID: 2007871305}
+  crop: {fileID: 11400000, guid: cf5832ebd7b1db84d93dc7794144a1a8, type: 2}
 --- !u!1001 &2042942034
 PrefabInstance:
   m_ObjectHideFlags: 0

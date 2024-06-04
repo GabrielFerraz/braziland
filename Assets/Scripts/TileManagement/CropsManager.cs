@@ -73,10 +73,8 @@ public class CropsManager : TimeAgent
     public void Seed(Vector3Int position, Crop toSeed)
     {
         targetTilemap.SetTile(position, seeded);
-
         crops[(Vector2Int)position].crop = toSeed;
     }
-
 
     private void CreatePlowedTile(Vector3Int position)
     {
@@ -86,7 +84,9 @@ public class CropsManager : TimeAgent
 
         GameObject go = Instantiate(cropsSpritePrefab);
         go.transform.position = targetTilemap.CellToWorld(position);
+        go.transform.position = new Vector3(position.x + 0.52f, position.y + 0.52f, position.z - 0.2f);
         go.SetActive(false);
+       
         crop.renderer = go.GetComponent<SpriteRenderer>();
 
 
