@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e369473af70144385e47abdedbbe27, type: 3}
+  m_Name: Tomato
+  m_EditorClassIdentifier: 
+  itemName: Tomato
+  icon: {fileID: 1093771652, guid: 80ec6f5977e165142ba2af45300b8d48, type: 3}
+  onAction: {fileID: 0}
+  crop: {fileID: 11400000, guid: cf5832ebd7b1db84d93dc7794144a1a8, type: 2}
+  onTileMapAction: {fileID: 11400000, guid: fbf218cbdaa48314bb244598568b9395, type: 2}
+  onItemUsed: {fileID: 11400000, guid: fbf218cbdaa48314bb244598568b9395, type: 2}
