@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
-using System;
 using TMPro;
 
 public class LetterSchedule : MonoBehaviour
 {
     public static LetterSchedule scheduler;
     public List<LetterData> letters;
+
+    public List<LetterDelivery> letterDelivery;
+
+    [System.Serializable]
+    public class LetterDelivery
+    {
+        public LetterData toDeliver;
+        public int dateToDeliver;
+    }
+
+    [SerializeField, ReadOnly]
+    private List<LetterData> deliveredLetters; // letters delivered. 
 
     [ReadOnly]
     public LetterData currentSelectedLetter;
@@ -40,6 +51,8 @@ public class LetterSchedule : MonoBehaviour
     public GameObject mailBoxNotif;
     public GameObject letterInMail;
 
+    public TextMeshProUGUI dayText; // this shouldn't be here, but in Day Cycle's script. 
+
 
     [Header("Game Events")]
     public GameEvent @MailboxAccess;
@@ -51,6 +64,7 @@ public class LetterSchedule : MonoBehaviour
 
     private void Start()
     {
+        dayText.SetText("Day \n" + (currentDay + 1)); 
         DeliverDailyLetters();
         @MailboxAccess.OnRaise.AddListener((x) => OpenMailBox());
     }
@@ -63,6 +77,7 @@ public class LetterSchedule : MonoBehaviour
     public void GoToNextDay()
     {
         ++currentDay;
+        dayText.SetText("Day \n" + (currentDay + 1));
         DeliverDailyLetters();
         if (CheckAllRead() && mailBoxNotif != null)
         {
@@ -78,11 +93,16 @@ public class LetterSchedule : MonoBehaviour
 
     public void DeliverDailyLetters()
     {
-        var dailyLetter = letters[currentDay];
+        //var dailyLetter = letters[currentDay];
+        var dailyLetter = letterDelivery.Find(x => x.dateToDeliver == currentDay);
+        if (dailyLetter == null) return;
+
         var letter = Instantiate(letterModelPrefab, mailBox).GetComponent<LetterModel>();
 
-        letter.letter = dailyLetter;
+        letter.letter = dailyLetter.toDeliver;
         letter.InitModel();
+
+        deliveredLetters.Add(dailyLetter.toDeliver);
     }
 
     /// <summary>
@@ -133,7 +153,6 @@ public class LetterSchedule : MonoBehaviour
         {
             contentImage.sprite = currentSelectedLetter.letterContentSprite[0];
         }
-
     }
 
 
@@ -185,7 +204,7 @@ public class LetterSchedule : MonoBehaviour
 
     public bool CheckAllRead()
     {
-        foreach (var letter in letters)
+        foreach (var letter in deliveredLetters)
         {
             if (!letter.isRead)
                 return false;

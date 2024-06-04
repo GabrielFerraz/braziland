@@ -35,8 +35,6 @@ public class DialogController : MonoBehaviour
 
     public bool hasDialogMusic;
 
-    //[ShowIf("hasDialogMusic")]
-    //public SoundEffectSO dialogMusic;
 
     [ShowIf("hasDialogMusic")]
     public AudioSource mainSource;
@@ -68,16 +66,7 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
-        //OnEndDialog.OnRaise.AddListener((v) => ConcludeDialog());
-
         OnNextDialog += CheckConversationLimit;
-
-        //InitiateDialog(startingConversation);
-
-        //if (dialogMusic != null && mainSource != null && hasDialogMusic)
-        //{
-        //    SetUpDialogMusic();
-        //}
     }
 
     void SetUpDialogMusic()
@@ -216,6 +205,7 @@ public class DialogController : MonoBehaviour
             // for ending conversation it's done externally for now. 
 
             dialogWindow.SetActive(false);
+            OnDialogEnd.Raise();
             // begin game and so on. 
             dialogEnd = true;
             nextBtn.onClick.RemoveAllListeners();

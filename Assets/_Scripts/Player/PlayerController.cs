@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
     public Transform characterEye;
     private Animator _anim;
 
+
+    // this is just bizarre coding here, to meet up jam deadline. 
+    public AudioSource playerSource;
+    public AudioClip walkClip;
+
     float moveX, moveY;
     Vector2 moveDir;
 
@@ -30,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         InteractDone.OnRaise.AddListener((x) => IsInteracting = false);
         _anim.SetFloat("LastVer", 1); // start facing up. 
-        IsInteracting = false; 
+        IsInteracting = false;
     }
     private void OnDestroy()
     {
@@ -69,14 +74,34 @@ public class PlayerController : MonoBehaviour
     public bool IsInteracting { get; set; }
     public void InteractWithObject()
     {
-        if (!IsInteracting)
+        if (!IsInteracting && sightedObjectCollider != null)
+        {
             sightedObjectCollider.GetComponent<IInteractable>()?.Interact();
+            IsInteracting = true;
+            _anim.SetFloat("MoveSpeed", 0);
+        }
     }
 
     private void FixedUpdate()
     {
         interactRay.origin = (Vector2)characterEye.position;
         body.velocity = moveSpeed * moveDir;
+
+        //if (body.velocity.magnitude > 0)
+        //{
+        //    // character is walking. 
+        //    if (!playerSource.isPlaying)
+        //    {
+        //        playerSource.clip = walkClip;
+        //        Debug.Log("Play walk sfx");
+        //        playerSource.Play();
+        //    }
+        //}
+        //else
+        //{
+        //    if (playerSource.isPlaying)
+        //        playerSource.Stop();
+        //}
 
         if (moveX > 0 && moveX > moveY)
         {
@@ -97,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
         RaycastHit2D sighted = Physics2D.Raycast(interactRay.origin, interactRay.direction, interactableSight, interactLayer);
 
-        Debug.DrawRay(interactRay.origin, interactRay.direction, Color.red);
+        //Debug.DrawRay(interactRay.origin, interactRay.direction, Color.red);
         if (sighted)
         {
             sightedObjectCollider = sighted.collider;
