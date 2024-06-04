@@ -25,7 +25,7 @@ public class Inventory_UI : MonoBehaviour
     {
         canvas = FindObjectOfType<Canvas>();
         //Item item = GameManager.instance.itemManager.GetItemByName("Tomato");
-        //player.inventory.Add(item);
+        //playerTransform.inventory.Add(item);
 
     }
 
@@ -76,7 +76,7 @@ public class Inventory_UI : MonoBehaviour
                 }
                 else
                 {
-                    // Handle the case where the player's inventory has fewer slots than expected.
+                    // Handle the case where the playerTransform's inventory has fewer slots than expected.
                     slots[i].SetEmpty();
                 }
             }
