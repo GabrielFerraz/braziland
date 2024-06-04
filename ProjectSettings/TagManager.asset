@@ -45,6 +45,9 @@ TagManager:
   - name: Environment
     uniqueID: 4193847145
     locked: 0
+  - name: Character
+    uniqueID: 241490603
+    locked: 0
   - name: Inventory
     uniqueID: 2772066425
     locked: 0
