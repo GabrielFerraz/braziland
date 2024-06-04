@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    Transform playerTransform;
-    Player player;
+    public Transform playerTransform;
+    public Player player;
     [SerializeField] float speed = 5f;
     [SerializeField] float pickUpDistance = 1.5f;
     [SerializeField] float ttl = 10f;
@@ -17,6 +17,7 @@ public class PickupItem : MonoBehaviour
     {
 
         playerTransform = GameManager.instance.player.transform;
+        player = GameManager.instance.player;
     }
     private void Update()
     {
@@ -35,7 +36,8 @@ public class PickupItem : MonoBehaviour
 
         if (distance < 0.1f)
         {
-            if(player.inventory != null)
+            if(player.
+                inventory != null)
             {
                 player.inventory.Add(item);
             }

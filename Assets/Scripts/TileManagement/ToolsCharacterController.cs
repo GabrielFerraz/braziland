@@ -14,12 +14,15 @@ public class ToolsCharacterController : MonoBehaviour
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] MarkerManager markerManager;
     [SerializeField] float maxDistance=1.5f;
-    [SerializeField] CropsManager cropsManager;
+    [SerializeField] public CropsManager cropsManager;
     [SerializeField] TileData plowableTiles;
     [SerializeField] ToolbarController toolbarController;
+    [SerializeField] ToolAction OnTilePickup;
     public Player player;
     public Movement movement;
     public Crop crop;
+
+    
 
     Vector3Int selectedTilePosition;
     bool selectable;
@@ -76,19 +79,7 @@ public class ToolsCharacterController : MonoBehaviour
             ToolHit hit = c.GetComponent<ToolHit>();
             if (hit != null)
             {
-                //if(hit is TreeCuttable)
-                //{
-                //    if(tool is TreeCuttable)
-                //    CutTree();
-                //}
-
-                //if (hit is MineableOre)
-                //{
-                //    if(tool is pickaxe)
-                //    {
-                //        MineOre();
-                //    }
-                //}
+               
                 hit.Hit();
                 break;
             }
@@ -97,15 +88,7 @@ public class ToolsCharacterController : MonoBehaviour
         return false;
     }
 
-    private void MineOre()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void CutTree()
-    {
-        throw new NotImplementedException();
-    }
+  
 
     private void UseToolGrid()
     {
@@ -115,27 +98,44 @@ public class ToolsCharacterController : MonoBehaviour
             Item item = GameManager.instance.itemManager.GetItemByName("Tomato");
             if (item == null)
             {
+                PickupTile();
                 return;
             }
             
             if (item.data.onTileMapAction == null) return;
             bool complete = item.data.onTileMapAction.OnApplyToTileMap(selectedTilePosition, tileMapReadController, item);
+            if (complete)
+            {
+                if(item.data.onItemUsed!= null)
+                {
+                    item.data.onItemUsed.OnItemUsed(item, player.inventory);
+                }
+            }
             //TileBase tileBase = tileMapReadController.GetTileBase(selectedTilePosition);
             //TileData tileData = tileMapReadController.GetTileData(tileBase);
             //if (tileData != plowableTiles) { return; }
 
           
-            if (cropsManager.Check(selectedTilePosition))
-            {
-                cropsManager.Seed(
-                    selectedTilePosition
-                    , crop
-                    );
-            }
-            else
-            {
-                cropsManager.Plow(selectedTilePosition);
+            if(cropsManager != null)
+            { 
+                if (cropsManager.Check(selectedTilePosition))
+                {
+                    cropsManager.Seed(
+                        selectedTilePosition
+                        , crop
+                        );
+                }
+                else
+                {
+                    cropsManager.Plow(selectedTilePosition);
+                }
             }
         }
+    }
+
+    private void PickupTile()
+    {
+        if(OnTilePickup == null) { return; }
+        OnTilePickup.OnApplyToTileMap(selectedTilePosition, tileMapReadController, null);
     }
 }

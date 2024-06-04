@@ -6030,6 +6030,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33910aa32786684ab583b6cbf6faf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1109115524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7209038816609264521, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2007871310}
+    - target: {fileID: -7209038816609264521, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2007871304}
+    - target: {fileID: 5789280571496034358, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_Name
+      value: PickupItemPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789280571496034358, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883545809507461745, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 397c1229730a3e341bfde8c0c8d3ddb1, type: 3}
 --- !u!1001 &1146464922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6627,7 +6696,7 @@ MonoBehaviour:
   tileManager: {fileID: 0}
   itemManager: {fileID: 0}
   timeManager: {fileID: 1218998587}
-  player: {fileID: 0}
+  player: {fileID: 2007871310}
 --- !u!114 &1218998584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6676,6 +6745,7 @@ MonoBehaviour:
   seeded: {fileID: 11400000, guid: 4f4c64679d84b13449fba68f39c15131, type: 2}
   targetTilemap: {fileID: 876811847}
   cropsSpritePrefab: {fileID: 2124904226859490312, guid: a6c335fcfa5f4f44089b65e8dbac3f97, type: 3}
+  collectable: {fileID: 0}
 --- !u!114 &1218998587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6777,7 +6847,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dayLightColor: {r: 1, g: 1, b: 1, a: 1}
-  timeScale: 600
+  timeScale: 2000
   startAtTime: 28800
   text: {fileID: 1502639840}
 --- !u!1001 &1222158547
@@ -10248,7 +10318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 591825803}
-  player: {fileID: 2007871308}
+  player: {fileID: 2007871310}
   slots:
   - {fileID: 566564453}
   - {fileID: 109700048}
@@ -21487,8 +21557,8 @@ GameObject:
   - component: {fileID: 2007871305}
   - component: {fileID: 2007871306}
   - component: {fileID: 2007871307}
-  - component: {fileID: 2007871308}
   - component: {fileID: 2007871309}
+  - component: {fileID: 2007871310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -21601,18 +21671,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1322275, y: 2.3222835}
   m_EdgeRadius: 0
---- !u!114 &2007871308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007871303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1327c34296292e9458c3655994cfca9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2007871309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21633,9 +21691,25 @@ MonoBehaviour:
   cropsManager: {fileID: 1218998586}
   plowableTiles: {fileID: 11400000, guid: a1a78e5392dac2744bfe6c12ce9c1beb, type: 2}
   toolbarController: {fileID: 389272233}
-  player: {fileID: 0}
+  OnTilePickup: {fileID: 11400000, guid: 0a46d913d8015c849963bfd6f8444000, type: 2}
+  player: {fileID: 2007871310}
   movement: {fileID: 2007871305}
   crop: {fileID: 11400000, guid: cf5832ebd7b1db84d93dc7794144a1a8, type: 2}
+--- !u!114 &2007871310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007871303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1327c34296292e9458c3655994cfca9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numTomato: 0
+  inventory:
+    slots: []
 --- !u!1001 &2042942034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22427,3 +22501,4 @@ SceneRoots:
   - {fileID: 1218998582}
   - {fileID: 1397893559}
   - {fileID: 330626986}
+  - {fileID: 1109115524}

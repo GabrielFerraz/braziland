@@ -22,9 +22,9 @@ public class Player : MonoBehaviour
             Vector3Int position = new Vector3Int((int)transform.position.x,
                 (int)transform.position.y, 0);
 
-            if ( GameManager.instance.tileManager != null && GameManager.instance.tileManager.IsInteractable(position))
+            if (GameManager.instance.tileManager != null && GameManager.instance.tileManager.IsInteractable(position))
             {
-                 GameManager.instance.tileManager.SetInteracted(position);
+                GameManager.instance.tileManager.SetInteracted(position);
             }
         }
     }
