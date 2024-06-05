@@ -737,6 +737,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 63ec72274c1b2584fbd75df336b26d0e, type: 2}
   - {fileID: 11400000, guid: 63ec72274c1b2584fbd75df336b26d0e, type: 2}
   - {fileID: 11400000, guid: 63ec72274c1b2584fbd75df336b26d0e, type: 2}
+  letterDelivery: []
+  deliveredLetters: []
   currentSelectedLetter: {fileID: 0}
   letterModelPrefab: {fileID: 8714293722312861573, guid: 96b97b3898ab4b048a5aa390d1125fea, type: 3}
   currentDay: 0
@@ -754,6 +756,8 @@ MonoBehaviour:
   profileParent: {fileID: 221669218}
   isSpriteContent: 1
   mailBoxNotif: {fileID: 1151816370}
+  letterInMail: {fileID: 0}
+  dayText: {fileID: 0}
   MailboxAccess: {fileID: 11400000, guid: 6b7eb0112d1bdf447b10dfb22b0cd774, type: 2}
 --- !u!1 &107544703
 GameObject:
