@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08263575fc31a1e4b846d87c3447d791
+guid: 931a9d747cbd429438a1f437452d90d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Elle Sheet_0
+      name: ElleSheetOustide_0
       rect:
         serializedVersion: 2
         x: 0
         y: 96
         width: 16
-        height: 30
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b90c0ebb4d8e9549a597e9fdf789c81
-      internalID: 1231668201
+      spriteID: 1d9d9ea887067ec4ca251707aa4d3c78
+      internalID: -363212925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_1
+      name: ElleSheetOustide_1
       rect:
         serializedVersion: 2
         x: 0
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 750c1af8d9f5f9a4d8acd141bb1b1675
-      internalID: -1948475668
+      spriteID: 579835b6ef2b25241873f942d93795ae
+      internalID: 1109251015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_2
+      name: ElleSheetOustide_2
       rect:
         serializedVersion: 2
         x: 17
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d46b6490df8ebc4995f28b32e8e906f
-      internalID: 120413542
+      spriteID: d7125305459d35c4f9aab93c62e5c38b
+      internalID: 451692696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_3
+      name: ElleSheetOustide_3
       rect:
         serializedVersion: 2
         x: 33
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ff62be3e43bfe64b93960c81e8de2ba
-      internalID: -145142130
+      spriteID: 2687771026d7f9c42a866ae2f7cf2ed2
+      internalID: -410223315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_4
+      name: ElleSheetOustide_4
       rect:
         serializedVersion: 2
         x: 1
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b578a0120bc0df41b2aa12681a42750
-      internalID: -930387466
+      spriteID: 32d0d8012d29d07448bf3d0ddaa9ad7a
+      internalID: 1883638972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_5
+      name: ElleSheetOustide_5
       rect:
         serializedVersion: 2
         x: 17
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b2e8e1f55d901498983b2982139e52
-      internalID: -1052473883
+      spriteID: b5b85325fc3cf1f44b4759d9bd1ed6a3
+      internalID: -453032689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_6
+      name: ElleSheetOustide_6
       rect:
         serializedVersion: 2
         x: 33
@@ -276,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51333b346a84d3849a09110e3629c619
-      internalID: -5389287
+      spriteID: 19a4e950d96828546a97d658af172dd0
+      internalID: -1608635564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_7
+      name: ElleSheetOustide_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 30
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,17 +297,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 411970834974b62449bc5421af2585e3
-      internalID: -948661746
+      spriteID: dc759cbba87c6ce41b8882c78ccb2360
+      internalID: -589575306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_8
+      name: ElleSheetOustide_8
       rect:
         serializedVersion: 2
         x: 16
+        y: 95
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308467dff52954a49b8c75acf976b580
+      internalID: -1165250894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElleSheetOustide_9
+      rect:
+        serializedVersion: 2
+        x: 32
         y: 96
         width: 16
         height: 31
@@ -318,35 +339,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64c7ade32eecf274faa7e765be3acb3c
-      internalID: -833766948
+      spriteID: b738a9a344604c946a78175426312984
+      internalID: -919671001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76dc0f94083a01846b230f6812a25c71
-      internalID: -1634196076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Elle Sheet_10
+      name: ElleSheetOustide_10
       rect:
         serializedVersion: 2
         x: 16
@@ -360,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56811daa169ebad49964144cbd3d92b0
-      internalID: 597159390
+      spriteID: 55135b13ee9239147889f726ef1e7811
+      internalID: 469731162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elle Sheet_11
+      name: ElleSheetOustide_11
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 30
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,8 +381,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de616e3876ce0b41a050baa0ba8e532
-      internalID: -817257708
+      spriteID: 614259d4941621846b0d222c14bc9b74
+      internalID: -1478150536
       vertices: []
       indices: 
       edges: []
@@ -398,18 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Elle Sheet_0: 1231668201
-      Elle Sheet_1: -1948475668
-      Elle Sheet_10: 597159390
-      Elle Sheet_11: -817257708
-      Elle Sheet_2: 120413542
-      Elle Sheet_3: -145142130
-      Elle Sheet_4: -930387466
-      Elle Sheet_5: -1052473883
-      Elle Sheet_6: -5389287
-      Elle Sheet_7: -948661746
-      Elle Sheet_8: -833766948
-      Elle Sheet_9: -1634196076
+      ElleSheetOustide_0: -363212925
+      ElleSheetOustide_1: 1109251015
+      ElleSheetOustide_10: 469731162
+      ElleSheetOustide_11: -1478150536
+      ElleSheetOustide_2: 451692696
+      ElleSheetOustide_3: -410223315
+      ElleSheetOustide_4: 1883638972
+      ElleSheetOustide_5: -453032689
+      ElleSheetOustide_6: -1608635564
+      ElleSheetOustide_7: -589575306
+      ElleSheetOustide_8: -1165250894
+      ElleSheetOustide_9: -919671001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

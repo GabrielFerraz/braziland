@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -16,6 +17,7 @@ public class CropTile
     public float damage;
     public Vector3Int position;
 
+    private GameObject goCrop;
     public bool Complete
     {
         get
@@ -46,8 +48,11 @@ public class CropTile
 
         [SerializeField] GameObject collectable;
         Dictionary<Vector2Int, CropTile> crops;
+        private CropTile crop;
+    private GameObject goCrop;
 
-        private void Start()
+
+    private void Start()
         {
             crops = new Dictionary<Vector2Int, CropTile>();
             onTimeTick += Tick;
@@ -71,12 +76,21 @@ public class CropTile
                 }
                 if (cropTile.Complete)
                 {
-                    Debug.Log("I'm done growing");
+                    //Debug.Log("I'm done growing");
                     cropTile.crop = null;
                     GameObject go = Instantiate(collectable);
                     go.transform.position = targetTilemap.CellToWorld(cropTile.position);
                     go.transform.position = new Vector3(cropTile.position.x + 0.52f, cropTile.position.y + 0.52f, cropTile.position.z - 0.2f);
-                    continue;
+                    crop.renderer = null;
+                if (cropsSpritePrefab != null)
+                {
+                    if (goCrop != null)
+                    {
+                        Destroy(goCrop);
+                    }
+                }
+               
+                continue;
                 }
                 cropTile.growTimer += 1;
 
@@ -115,19 +129,19 @@ public class CropTile
 
         public void CreatePlowedTile(Vector3Int position)
         {
-            CropTile crop = new CropTile();
+            crop = new CropTile();
             crops.Add((Vector2Int)position, crop);
 
 
             if (cropsSpritePrefab!= null)
             {
-                GameObject go = Instantiate(cropsSpritePrefab);
-                go.transform.position = targetTilemap.CellToWorld(position);
-                go.transform.position = new Vector3(position.x + 0.52f, position.y + 0.52f, position.z - 0.2f);
-            
-                go.SetActive(false);
+                goCrop = Instantiate(cropsSpritePrefab);
+            goCrop.transform.position = targetTilemap.CellToWorld(position);
+            goCrop.transform.position = new Vector3(position.x + 0.52f, position.y + 0.52f, position.z - 0.2f);
 
-                crop.renderer = go.GetComponent<SpriteRenderer>();
+            goCrop.SetActive(false);
+
+                crop.renderer = goCrop.GetComponent<SpriteRenderer>();
 
                 crop.position = position;
 

@@ -17,4 +17,10 @@ public class SceneLoader : MonoBehaviour
         FindObjectOfType<ApplicationManager>().SceneChange.Raise();
         SceneManager.LoadScene("CookingScene");
     }
+    public  void LoadOutsideScene()
+    {
+
+        FindObjectOfType<ApplicationManager>().SceneChange.Raise();
+        SceneManager.LoadScene("Fouad"); 
+    }
 }

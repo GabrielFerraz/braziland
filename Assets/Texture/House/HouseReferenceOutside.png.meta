@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2765826250703345a7ca437a6b3f7a0
+guid: 51a3bc3b336c5724390d619b0b0707a3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,30 +136,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House-floor_0
+      name: HouseReferenceOutside_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 62
-        width: 388
-        height: 371
+        x: 239
+        y: 57
+        width: 182
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
-      physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 8, y: 0}
-        - {x: 0, y: 8}
-        - {x: -8, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca3185b74765a8d46964f49e334eb9da
-      internalID: 902006165
+      spriteID: c69d5f2a270805540a9e61a356824f2e
+      internalID: -400240005
       vertices: []
       indices: 
       edges: []
@@ -175,7 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      House-floor_0: 902006165
+      HouseReferenceOutside_0: -400240005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

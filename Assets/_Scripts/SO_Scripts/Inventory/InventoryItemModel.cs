@@ -74,5 +74,7 @@ public class InventoryItemModel : MonoBehaviour
         Instance.selectedItem = this;
         //Instance.PromptUse(); 
         Instance.UseSelectedItem();
+
     }
+    
 }

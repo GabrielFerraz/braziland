@@ -31,8 +31,8 @@ public class Movement : MonoBehaviour
         transform.position += direction.normalized * speed * Time.deltaTime;
 
 
-        if (direction.x == 1 && !facingright) Flip();
-        else if (direction.x == -1 && facingright) Flip();
+        //if (direction.x == 1 && !facingright) Flip();
+        //else if (direction.x == -1 && facingright) Flip();
 
         moving = horizontal != 0 || vertical != 0;
         animator.SetBool("IsMoving", moving);

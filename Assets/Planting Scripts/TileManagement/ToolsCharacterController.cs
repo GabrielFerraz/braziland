@@ -98,7 +98,7 @@ public class ToolsCharacterController : MonoBehaviour
             Item item = GameManager.instance.itemManager.GetItemByName("Tomato");
             if (item == null)
             {
-                PickupTile();
+                //PickupTile();
                 return;
             }
             

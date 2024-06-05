@@ -21,6 +21,7 @@ public class Collectable : MonoBehaviour
             if (item != null)
             {
                 player.inventory.Add(item);
+                // item data -> Green Tea -> +1 the number of teas 
                 Destroy(this.gameObject);
 
             }

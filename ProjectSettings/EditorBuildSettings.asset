@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CookingScene.unity
     guid: 8f13468353c077f4094a9ff11a3634c5
+  - enabled: 1
+    path: Assets/Scenes/Fouad.unity
+    guid: ecbad59d46561834294c68ab4ad206a3
   m_configObjects: {}
