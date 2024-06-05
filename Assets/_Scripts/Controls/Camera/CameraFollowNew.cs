@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollowNew : MonoBehaviour
 {
     public Transform target;
     public float smoothSpeed = 0.125f;
 
     public Vector3 offset;
     private Vector3 baseOffset;
-    Vector3 desiredPosition; 
-    //[SerializeField] private Vector3 _eagleViewOffset;
-
-    //private Vector3 _tutorialOffset = new Vector3(-8f, 0, 0f);
-
-    //private bool toggle;
+    Vector3 desiredPosition;
 
     private void Awake()
     {
@@ -25,24 +20,10 @@ public class CameraFollow : MonoBehaviour
         baseOffset = offset;
     }
 
-    //public void TutorialOffset()
-    //{
-    //    offset += _tutorialOffset;
-    //}
-
     public void RestoreView()
     {
         offset = baseOffset;
     }
-
-    //public void ToggleEagleView()
-    //{
-    //    toggle = !toggle;
-    //    if (toggle)
-    //        offset -= _eagleViewOffset;
-    //    else
-    //        offset = baseOffset;
-    //}
     private void Update()
     {
         desiredPosition = target.position + offset;
