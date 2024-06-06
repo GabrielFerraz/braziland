@@ -19,7 +19,7 @@ public class DayTimeManager : MonoBehaviour
 
     [SerializeField] float startAtTime = 28800f; // in seconds
     [SerializeField] TextMeshProUGUI text;
-    //[SerializeField] Light2D globalLight;
+    [SerializeField] Light2D globalLight;
     private int days;
     
     List<TimeAgent> agents;
@@ -87,7 +87,7 @@ public class DayTimeManager : MonoBehaviour
     {
         float v = nightTimeCurve.Evaluate(Hours);
         Color c = Color.Lerp(dayLightColor, nightLightColor, v);
-        //globalLight.color = c;
+        globalLight.color = c;
     }
 
     private void TimeValueCalculation()
@@ -96,7 +96,10 @@ public class DayTimeManager : MonoBehaviour
         int mm = (int)Minutes;
 
         text.text = hh.ToString("00") + ":" + mm.ToString("00");
+    
     }
+
+    
 
     private void NextDay()
     {

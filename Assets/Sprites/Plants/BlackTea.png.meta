@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b2e13ece81a60143a0a553b6a857a6e
+guid: ff3e333715eb6f247b04f969e28b55c3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chamomile_0
+      name: BlackTea_0
       rect:
         serializedVersion: 2
         x: 4
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4960117e617bc534da4c2eac2cb5695d
-      internalID: 1550307175
+      spriteID: f546f64e50e620442a31b4fd7a6cf7a3
+      internalID: 58449259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chamomile_1
+      name: BlackTea_1
       rect:
         serializedVersion: 2
         x: 28
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,40 +171,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 438ee60bc80ab8e44bd52c673ecf84e4
-      internalID: 1565075189
+      spriteID: bbe682a74a44ded4da80540210786880
+      internalID: 1364989707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chamomile_2
+      name: BlackTea_2
       rect:
         serializedVersion: 2
         x: 51
         y: 0
         width: 20
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04733b9a9a60eaa41a2f46bf3f8a7b9e
-      internalID: 1843138731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chamomile_3
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 0
-        width: 23
         height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -213,8 +192,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6fa8d27b31cbc74bad2e7f11a45c487
-      internalID: -1523446821
+      spriteID: c36491c03c06415459aaefc7038ff53e
+      internalID: -100212050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackTea_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2ed312bd7d4e5478eee0d1e1e3d30e
+      internalID: -1174294809
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Chamomile_0: 1550307175
-      Chamomile_1: 1565075189
-      Chamomile_2: 1843138731
-      Chamomile_3: -1523446821
+      BlackTea_0: 58449259
+      BlackTea_1: 1364989707
+      BlackTea_2: -100212050
+      BlackTea_3: -1174294809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

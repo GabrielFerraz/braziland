@@ -56,17 +56,17 @@ public class InventoryItemModel : MonoBehaviour
     public void ActivatePopUp(bool isOn = true)
     {
         return; // don't use this for now. 
-        optionsPopup.SetActive(isOn);
-        if (!isOn)
-        {
-            useExtraPopup.SetActive(false);
-            dropExtraPopup.SetActive(false);
-        }
-        if (isOn)
-        {
-            Instance.CloseActivePopup();
-            //Instance.selectedItem = this;
-        }
+        //optionsPopup.SetActive(isOn);
+        //if (!isOn)
+        //{
+        //    useExtraPopup.SetActive(false);
+        //    dropExtraPopup.SetActive(false);
+        //}
+        //if (isOn)
+        //{
+        //    Instance.CloseActivePopup();
+        //    //Instance.selectedItem = this;
+        //}
     }
 
     public void SelectItem()

@@ -49,7 +49,7 @@ public class CropTile
         [SerializeField] GameObject collectable;
         Dictionary<Vector2Int, CropTile> crops;
         private CropTile crop;
-    private GameObject goCrop;
+        private GameObject goCrop;
 
 
     private void Start()
@@ -98,9 +98,10 @@ public class CropTile
                 {
                     cropTile.renderer.gameObject.SetActive(true);
                     cropTile.renderer.sprite = cropTile.crop.sprites[cropTile.growStage];
-
                     cropTile.growStage += 1;
-                }
+                if(cropTile.growStage>2)
+                goCrop.transform.position = new Vector3(cropTile.position.x + 0.52f, cropTile.position.y + 1f, cropTile.position.z - 0.2f);
+            }
 
 
             }
@@ -138,7 +139,6 @@ public class CropTile
                 goCrop = Instantiate(cropsSpritePrefab);
             goCrop.transform.position = targetTilemap.CellToWorld(position);
             goCrop.transform.position = new Vector3(position.x + 0.52f, position.y + 0.52f, position.z - 0.2f);
-
             goCrop.SetActive(false);
 
                 crop.renderer = goCrop.GetComponent<SpriteRenderer>();
