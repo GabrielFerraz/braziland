@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f26d27e7957ee041a5bbd60027ef496, type: 3}
-  m_Name: New Crop
+  m_Name: Green Tea
   m_EditorClassIdentifier: 
   timeToGrow: 20
   yield: {fileID: 11400000, guid: c3be1137eac56c1468074dd0967431ff, type: 2}
